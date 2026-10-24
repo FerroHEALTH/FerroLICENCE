@@ -1,0 +1,428 @@
+{
+  "generated_by": "ferrolicence-core 0.1.0 (Rust), 2026-10-24",
+  "cases": [
+    {
+      "name": "ok_a",
+      "token": "ok_a.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2026-11-01",
+      "result": "ok",
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee": "Example Hospital NV",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      }
+    },
+    {
+      "name": "ok_b_unicode",
+      "token": "ok_b_unicode.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2027-10-31",
+      "result": "ok",
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a9",
+        "licensee": "Ünïcode \"Quoted\" / Slash & Co. — ✓",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      }
+    },
+    {
+      "name": "untrusted",
+      "token": "untrusted.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2026-11-01",
+      "result": "UntrustedPrimary",
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee": "Example Hospital NV",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      }
+    },
+    {
+      "name": "subkey_signed",
+      "token": "subkey_signed.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2026-11-01",
+      "result": "UnknownSigner",
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee": "Example Hospital NV",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      }
+    },
+    {
+      "name": "two_signatures",
+      "token": "two_signatures.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2026-11-01",
+      "result": "ExtraSignatures",
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee": "Example Hospital NV",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      }
+    },
+    {
+      "name": "unknown_field",
+      "token": "unknown_field.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2026-11-01",
+      "result": "Payload",
+      "licence": null
+    },
+    {
+      "name": "bad_date",
+      "token": "bad_date.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2026-11-01",
+      "result": "Payload",
+      "licence": null
+    },
+    {
+      "name": "tampered",
+      "token": "tampered.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2026-11-01",
+      "result": "BadSignature",
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee": "Example Hospital BV",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      }
+    },
+    {
+      "name": "binary_signature",
+      "token": "binary_signature.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2026-11-01",
+      "result": "NotTextSignature",
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee": "Example Hospital NV",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      }
+    },
+    {
+      "name": "no_certificate",
+      "token": "no_certificate.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2026-11-01",
+      "result": "Token:MissingCertificate",
+      "licence": null
+    },
+    {
+      "name": "ok_a_expired",
+      "token": "ok_a.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2027-11-01",
+      "result": "Expired",
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee": "Example Hospital NV",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      }
+    },
+    {
+      "name": "ok_a_not_yet_valid",
+      "token": "ok_a.asc",
+      "anchors": [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day": "2026-10-31",
+      "result": "NotYetValid",
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee": "Example Hospital NV",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      }
+    },
+    {
+      "name": "ok_a_only_b_trusted",
+      "token": "ok_a.asc",
+      "anchors": [
+        "B.asc"
+      ],
+      "day": "2026-11-01",
+      "result": "UntrustedPrimary",
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee": "Example Hospital NV",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      }
+    },
+    {
+      "name": "register_free_licence",
+      "token": "licence.asc",
+      "anchors": [
+        "0BCE848225EFAECA912175292DBFB014CA506311.asc",
+        "F2D214FC30698BA65A846B2BF2EA48D4C316406D.asc"
+      ],
+      "day": "2026-10-24",
+      "result": "ok",
+      "licence": {
+        "licence_id": "01a1175c-cd67-777d-bdc0-c95bf1c900d3",
+        "licensee": "Everyone, under the Business Source License 1.1",
+        "issued": "2026-10-07",
+        "not_before": "2026-10-07",
+        "not_after": "2099-12-31",
+        "use": "non-commercial"
+      }
+    },
+    {
+      "name": "register_retired_key",
+      "token": "licence.asc",
+      "anchors": [
+        "0BCE848225EFAECA912175292DBFB014CA506311.asc",
+        "F2D214FC30698BA65A846B2BF2EA48D4C316406D.asc"
+      ],
+      "day": "2026-10-24",
+      "result": "UntrustedPrimary",
+      "licence": {
+        "licence_id": "01a090a8-59e4-76da-92f5-3f7e4ea9d7c0",
+        "licensee": "Everyone, under the Business Source License 1.1",
+        "issued": "2026-09-11",
+        "not_before": "2026-09-11",
+        "not_after": "2099-12-31",
+        "use": "non-commercial"
+      }
+    }
+  ],
+  "canonical": [
+    {
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee": "Example Hospital NV",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      },
+      "canonical": "{\n  \"licence_id\": \"019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8\",\n  \"licensee\": \"Example Hospital NV\",\n  \"issued\": \"2026-10-24\",\n  \"not_before\": \"2026-11-01\",\n  \"not_after\": \"2027-10-31\",\n  \"use\": \"commercial\"\n}\n"
+    },
+    {
+      "licence": {
+        "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a9",
+        "licensee": "Ünïcode \"Quoted\" / Slash & Co. — ✓",
+        "issued": "2026-10-24",
+        "not_before": "2026-11-01",
+        "not_after": "2027-10-31",
+        "use": "commercial"
+      },
+      "canonical": "{\n  \"licence_id\": \"019a1171-8f20-7b3e-a5c4-2e9d7f60b1a9\",\n  \"licensee\": \"Ünïcode \\\"Quoted\\\" / Slash & Co. — ✓\",\n  \"issued\": \"2026-10-24\",\n  \"not_before\": \"2026-11-01\",\n  \"not_after\": \"2027-10-31\",\n  \"use\": \"commercial\"\n}\n"
+    }
+  ],
+  "stamps": [
+    {
+      "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+      "timestamp_ms": 0,
+      "stamp": "c63a"
+    },
+    {
+      "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+      "timestamp_ms": 1,
+      "stamp": "702d"
+    },
+    {
+      "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+      "timestamp_ms": 1793491200000,
+      "stamp": "6d4a"
+    },
+    {
+      "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+      "timestamp_ms": 281474976710655,
+      "stamp": "2b51"
+    },
+    {
+      "licence_id": "01a1175c-cd67-777d-bdc0-c95bf1c900d3",
+      "timestamp_ms": 0,
+      "stamp": "d169"
+    },
+    {
+      "licence_id": "01a1175c-cd67-777d-bdc0-c95bf1c900d3",
+      "timestamp_ms": 1,
+      "stamp": "7ef9"
+    },
+    {
+      "licence_id": "01a1175c-cd67-777d-bdc0-c95bf1c900d3",
+      "timestamp_ms": 1793491200000,
+      "stamp": "2544"
+    },
+    {
+      "licence_id": "01a1175c-cd67-777d-bdc0-c95bf1c900d3",
+      "timestamp_ms": 281474976710655,
+      "stamp": "797a"
+    },
+    {
+      "licence_id": "00000000-0000-0000-0000-000000000000",
+      "timestamp_ms": 0,
+      "stamp": "68d3"
+    },
+    {
+      "licence_id": "00000000-0000-0000-0000-000000000000",
+      "timestamp_ms": 1,
+      "stamp": "d67b"
+    },
+    {
+      "licence_id": "00000000-0000-0000-0000-000000000000",
+      "timestamp_ms": 1793491200000,
+      "stamp": "22b5"
+    },
+    {
+      "licence_id": "00000000-0000-0000-0000-000000000000",
+      "timestamp_ms": 281474976710655,
+      "stamp": "9156"
+    },
+    {
+      "licence_id": null,
+      "timestamp_ms": 0,
+      "stamp": "2b49"
+    },
+    {
+      "licence_id": null,
+      "timestamp_ms": 1793491200000,
+      "stamp": "af9b"
+    }
+  ],
+  "stamp_uuid": {
+    "licence_id": "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+    "input": "019a3b8c-0000-7abc-8def-0123456789ab",
+    "output": "019a3b8c-0000-7abc-8def-012345672d3e"
+  },
+  "binomial_tail": [
+    {
+      "n": 20,
+      "k": 20,
+      "p": 0.0000152587890625,
+      "tail": 4.681676354692199e-97
+    },
+    {
+      "n": 400,
+      "k": 400,
+      "p": 0.0000152587890625,
+      "tail": 0.0
+    },
+    {
+      "n": 400,
+      "k": 1,
+      "p": 0.0000152587890625,
+      "tail": 0.00608497329461364
+    },
+    {
+      "n": 400,
+      "k": 0,
+      "p": 0.0000152587890625,
+      "tail": 1.0
+    },
+    {
+      "n": 30,
+      "k": 2,
+      "p": 0.0000152587890625,
+      "tail": 1.0125248641077433e-7
+    },
+    {
+      "n": 100,
+      "k": 50,
+      "p": 0.5,
+      "tail": 0.539794618693582
+    },
+    {
+      "n": 65535,
+      "k": 65500,
+      "p": 0.9999995,
+      "tail": 1.0
+    },
+    {
+      "n": 10,
+      "k": 3,
+      "p": 0.2,
+      "tail": 0.3222004736000002
+    },
+    {
+      "n": 1000,
+      "k": 10,
+      "p": 0.001,
+      "tail": 1.074283386846494e-7
+    },
+    {
+      "n": 5,
+      "k": 6,
+      "p": 0.5,
+      "tail": 0.0
+    }
+  ]
+}

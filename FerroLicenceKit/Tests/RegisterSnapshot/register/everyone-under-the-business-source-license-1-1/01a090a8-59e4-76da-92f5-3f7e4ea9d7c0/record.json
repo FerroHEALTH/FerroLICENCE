@@ -1,0 +1,14 @@
+{
+  "schema": 2,
+  "licence": {
+    "licence_id": "01a090a8-59e4-76da-92f5-3f7e4ea9d7c0",
+    "licensee": "Everyone, under the Business Source License 1.1",
+    "issued": "2026-09-11",
+    "not_before": "2026-09-11",
+    "not_after": "2099-12-31",
+    "use": "non-commercial"
+  },
+  "signer": "5834C101A3F48578FD3CD1796C65DDBC5F712E51",
+  "token_sha256": "88dfbc1bfc4eb63b229108317318a095d725757bba8c5bc96d3625c516ceb1cd",
+  "recorded_at": "2026-09-11T13:29:11.717597Z"
+}

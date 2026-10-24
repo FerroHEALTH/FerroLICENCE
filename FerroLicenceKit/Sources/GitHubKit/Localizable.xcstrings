@@ -1,0 +1,72 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "GitHub answered %lld: %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "GitHub answered %1$lld: %2$@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub antwoordde %1$lld: %2$@"
+          }
+        }
+      }
+    },
+    "GitHub answered: %@": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub antwoordde: %@"
+          }
+        }
+      }
+    },
+    "GitHub said no. Start again and approve FerroLICENCE.": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub weigerde. Begin opnieuw en keur FerroLICENCE goed."
+          }
+        }
+      }
+    },
+    "No connection to GitHub.": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geen verbinding met GitHub."
+          }
+        }
+      }
+    },
+    "Sign in with GitHub first.": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Log eerst in met GitHub."
+          }
+        }
+      }
+    },
+    "The code expired. Start again.": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De code is verlopen. Begin opnieuw."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "fingerprint": "0BCE848225EFAECA912175292DBFB014CA506311",
+    "holder": "Alessandro Torrisi",
+    "medium": "YubiKey 40729503",
+    "added": "2026-10-07",
+    "status": "active",
+    "github": "AlessandroTorrisi"
+  },
+  {
+    "fingerprint": "F2D214FC30698BA65A846B2BF2EA48D4C316406D",
+    "holder": "Ruben Talstra",
+    "medium": "YubiKey 40729502",
+    "added": "2026-10-07",
+    "status": "active",
+    "github": "rubentalstra"
+  },
+  {
+    "fingerprint": "5834C101A3F48578FD3CD1796C65DDBC5F712E51",
+    "holder": "Ruben Talstra",
+    "medium": "software key",
+    "added": "2026-09-11",
+    "status": "retired",
+    "since": "2026-10-07"
+  }
+]

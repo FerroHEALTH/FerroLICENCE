@@ -1,0 +1,198 @@
+name: Release
+
+# A tag vX.Y.Z on main produces one immutable GitHub release of the app,
+# titled with the tag: FerroLICENCE-X.Y.Z.dmg for people,
+# FerroLICENCE-X.Y.Z.zip and appcast.xml for the updater, and the debug
+# symbols for crash reports. The app is signed with the Developer ID,
+# notarised and stapled; the .zip is signed with Sparkle's EdDSA key, and
+# that signature is checked with the public key inside the app before
+# anything is published. The release is created as a DRAFT, filled, checked
+# complete, and only then published: once published it is frozen by the
+# repository's release-immutability setting, and GitHub signs an attestation
+# of every file, which the last step checks. A bad cut is fixed by the next
+# patch version, never by editing. docs/releasing.md has the procedure and
+# the secrets.
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+-beta.[0-9]+"
+
+permissions: {}
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_27.1.app/Contents/Developer
+  TEAM: A8S2486A44
+
+jobs:
+  plan:
+    name: tag matches version and changelog
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.plan.outputs.version }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - id: plan
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          bash scripts/release/check-version.sh "$TAG"
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: sign, notarise, package
+    needs: plan
+    runs-on: xcode-27
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # No build cache on a publishing lane: nothing an untrusted run wrote
+      # may reach a release artifact.
+      - name: the Developer ID certificate, in a keychain of its own
+        env:
+          P12: ${{ secrets.DEVELOPER_ID_P12 }}
+          P12_PASSWORD: ${{ secrets.DEVELOPER_ID_P12_PASSWORD }}
+        run: |
+          keychain="$RUNNER_TEMP/release.keychain-db"
+          password="$(uuidgen)"
+          printf '%s' "$P12" | base64 --decode > "$RUNNER_TEMP/developer-id.p12"
+          security create-keychain -p "$password" "$keychain"
+          security set-keychain-settings -lut 3600 "$keychain"
+          security unlock-keychain -p "$password" "$keychain"
+          security import "$RUNNER_TEMP/developer-id.p12" -k "$keychain" -P "$P12_PASSWORD" -T /usr/bin/codesign
+          security set-key-partition-list -S apple-tool:,apple: -s -k "$password" "$keychain" >/dev/null
+          read -r -a existing <<<"$(security list-keychains -d user | tr -d '"' | tr '\n' ' ')"
+          security list-keychains -d user -s "$keychain" "${existing[@]}"
+          rm "$RUNNER_TEMP/developer-id.p12"
+      - name: archive
+        env:
+          BUILD: ${{ github.run_number }}
+        run: |
+          xcodebuild archive -project FerroLICENCE/FerroLICENCE.xcodeproj -scheme FerroLICENCE -configuration Release \
+            -destination 'generic/platform=macOS' -archivePath build/FerroLICENCE.xcarchive \
+            -clonedSourcePackagesDirPath build/SourcePackages \
+            CURRENT_PROJECT_VERSION="$BUILD" CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY="Developer ID Application" \
+            DEVELOPMENT_TEAM="$TEAM" OTHER_CODE_SIGN_FLAGS=--timestamp
+      - name: export for Developer ID
+        run: |
+          cat > build/export.plist <<PLIST
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0"><dict>
+            <key>method</key><string>developer-id</string>
+            <key>signingStyle</key><string>manual</string>
+            <key>signingCertificate</key><string>Developer ID Application</string>
+            <key>teamID</key><string>$TEAM</string>
+          </dict></plist>
+          PLIST
+          xcodebuild -exportArchive -archivePath build/FerroLICENCE.xcarchive -exportPath build/export -exportOptionsPlist build/export.plist
+          codesign --verify --deep --strict --verbose=2 build/export/FerroLICENCE.app
+      - name: notarise and staple
+        env:
+          NOTARY_KEY: ${{ secrets.NOTARY_KEY }}
+          NOTARY_KEY_ID: ${{ secrets.NOTARY_KEY_ID }}
+          NOTARY_ISSUER_ID: ${{ secrets.NOTARY_ISSUER_ID }}
+        run: |
+          printf '%s' "$NOTARY_KEY" > "$RUNNER_TEMP/notary.p8"
+          ditto -c -k --keepParent build/export/FerroLICENCE.app build/notarise.zip
+          xcrun notarytool submit build/notarise.zip --key "$RUNNER_TEMP/notary.p8" --key-id "$NOTARY_KEY_ID" \
+            --issuer "$NOTARY_ISSUER_ID" --wait --timeout 30m
+          rm "$RUNNER_TEMP/notary.p8"
+          xcrun stapler staple build/export/FerroLICENCE.app
+          spctl --assess --type execute --verbose=2 build/export/FerroLICENCE.app
+      - name: package
+        env:
+          VERSION: ${{ needs.plan.outputs.version }}
+        run: bash scripts/release/package.sh build/export/FerroLICENCE.app "$VERSION" dist build/FerroLICENCE.xcarchive/dSYMs
+      - name: the update feed, signed with Sparkle's EdDSA key
+        env:
+          VERSION: ${{ needs.plan.outputs.version }}
+          TAG: ${{ github.ref_name }}
+          REPO: ${{ github.repository }}
+          SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
+        run: |
+          feed="$RUNNER_TEMP/feed"
+          mkdir -p "$feed"
+          cp "dist/FerroLICENCE-$VERSION.zip" "$feed/"
+          bash scripts/release/notes-html.sh "$TAG" > "$feed/FerroLICENCE-$VERSION.html"
+          # A test version goes on Sparkle's beta channel, which only an app
+          # with Include test versions on accepts.
+          channel=()
+          case "$TAG" in *-beta.*) channel=(--channel beta) ;; esac
+          sparkle="$(find build/SourcePackages/artifacts -type d -path '*Sparkle*/bin' | head -n 1)"
+          # The private key goes in on stdin and is never written to disk.
+          printf '%s' "$SPARKLE_PRIVATE_KEY" | "$sparkle/generate_appcast" --ed-key-file - --embed-release-notes \
+            ${channel[@]+"${channel[@]}"} --download-url-prefix "https://github.com/$REPO/releases/download/$TAG/" "$feed"
+          cp "$feed/appcast.xml" dist/appcast.xml
+      - name: the update verifies with the key inside the app
+        env:
+          VERSION: ${{ needs.plan.outputs.version }}
+        run: swift scripts/release/verify-update.swift build/export/FerroLICENCE.app dist/appcast.xml "dist/FerroLICENCE-$VERSION.zip"
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dist
+          path: dist/
+          if-no-files-found: error
+
+  publish:
+    name: draft, attach, verify, publish
+    needs: [plan, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: dist
+          path: dist
+      - name: release notes from the changelog
+        env:
+          TAG: ${{ github.ref_name }}
+        run: bash scripts/release/notes.sh "$TAG" > notes.md
+      - name: create the draft release with every asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+          REPO: ${{ github.repository }}
+          VERSION: ${{ needs.plan.outputs.version }}
+        run: |
+          for f in "FerroLICENCE-$VERSION.dmg" "FerroLICENCE-$VERSION.zip" "FerroLICENCE-$VERSION-dSYMs.zip" appcast.xml; do
+            test -s "dist/$f" || { echo "missing dist/$f" >&2; exit 1; }
+          done
+          prerelease=()
+          case "$TAG" in *-beta.*) prerelease=(--prerelease) ;; esac
+          gh release create "$TAG" --repo "$REPO" --draft "${prerelease[@]}" --title "$TAG" --notes-file notes.md dist/*
+      - name: publish (the freeze)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+          REPO: ${{ github.repository }}
+        run: gh release edit "$TAG" --repo "$REPO" --draft=false
+      # Publishing makes GitHub sign an attestation of the tag and every
+      # file; people check a download against it (gh release verify-asset).
+      - name: GitHub's attestation covers every file
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+          REPO: ${{ github.repository }}
+        # GitHub writes the attestation up to several minutes after publishing;
+        # wait for it, up to fifteen minutes, then check every file against it.
+        run: |
+          for _ in $(seq 1 180); do
+            gh release verify "$TAG" --repo "$REPO" >/dev/null 2>&1 && break
+            sleep 5
+          done
+          gh release verify "$TAG" --repo "$REPO"
+          for f in dist/*; do gh release verify-asset "$TAG" "$f" --repo "$REPO"; done

@@ -1,0 +1,540 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ already exists; a licence is recorded once." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ bestaat al; een licentie wordt één keer vastgelegd."
+          }
+        }
+      }
+    },
+    "%@ has broken self-bindings" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ heeft kapotte zelfbindingen"
+          }
+        }
+      }
+    },
+    "%@ has schema %lld; this app reads schema 2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ has schema %2$lld; this app reads schema 2"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ heeft schema %2$lld; deze app leest schema 2"
+          }
+        }
+      }
+    },
+    "%@ is already trusted." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ wordt al vertrouwd."
+          }
+        }
+      }
+    },
+    "%@ is not a public certificate" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ is geen publiek certificaat"
+          }
+        }
+      }
+    },
+    "%@ is not a register record: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ is not a register record: %2$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ is geen registervastlegging: %2$@"
+          }
+        }
+      }
+    },
+    "%@ is not a trusted key." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ is geen vertrouwde sleutel."
+          }
+        }
+      }
+    },
+    "FerroEHR refuses it at the check “%@”." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FerroEHR weigert het bij de controle “%@”."
+          }
+        }
+      }
+    },
+    "GnuPG exported something other than a public certificate." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GnuPG heeft iets anders dan een publiek certificaat geëxporteerd."
+          }
+        }
+      }
+    },
+    "GnuPG returned something that is not a licence file." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GnuPG gaf iets terug dat geen licentiebestand is."
+          }
+        }
+      }
+    },
+    "Handed Over" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overgedragen"
+          }
+        }
+      }
+    },
+    "Ignored; the server runs on the free licence." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Genegeerd; de server draait op de gratis licentie."
+          }
+        }
+      }
+    },
+    "In Use" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In gebruik"
+          }
+        }
+      }
+    },
+    "In force; the server reports it." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Van kracht; de server meldt het."
+          }
+        }
+      }
+    },
+    "Lost" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kwijt"
+          }
+        }
+      }
+    },
+    "Name the person who holds the key." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noem de persoon die de sleutel heeft."
+          }
+        }
+      }
+    },
+    "Not signed by one of our keys. FerroEHR does not trust it." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niet ondertekend met een van onze sleutels. FerroEHR vertrouwt het niet."
+          }
+        }
+      }
+    },
+    "Not valid on %@. It ended on %@, %lld days before." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not valid on %1$@. It ended on %2$@, %#@count@ before."
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 3,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg day"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg days"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niet geldig op %1$@. Hij is afgelopen op %2$@, %#@count@ eerder."
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 3,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg dag"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg dagen"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Not valid yet. It starts on %@." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog niet geldig. Hij begint op %@."
+          }
+        }
+      }
+    },
+    "Remove the tab or line break from the reason." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwijder de tab of regelovergang uit de reden."
+          }
+        }
+      }
+    },
+    "Remove the tab or line break from the text." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwijder de tab of regelovergang uit de tekst."
+          }
+        }
+      }
+    },
+    "Retired" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingetrokken"
+          }
+        }
+      }
+    },
+    "Say why, for example the contract clause or the letter." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeg waarom, bijvoorbeeld het contractartikel of de brief."
+          }
+        }
+      }
+    },
+    "Signed by a retired key (%@, %@). FerroEHR no longer trusts it." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Signed by a retired key (%1$@, %2$@). FerroEHR no longer trusts it."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ondertekend met een ingetrokken sleutel (%1$@, %2$@). FerroEHR vertrouwt hem niet meer."
+          }
+        }
+      }
+    },
+    "That file is not a key from Set Up a YubiKey." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dat bestand is geen sleutel uit Stel een YubiKey in."
+          }
+        }
+      }
+    },
+    "The Register check refuses it: %@. Nothing was recorded." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De Register check weigert het: %@. Er is niets vastgelegd."
+          }
+        }
+      }
+    },
+    "The file was changed after it was signed." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het bestand is na het ondertekenen gewijzigd."
+          }
+        }
+      }
+    },
+    "The key file gives no GitHub login." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het sleutelbestand noemt geen GitHub-login."
+          }
+        }
+      }
+    },
+    "The last day comes before the first day." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De laatste dag valt vóór de eerste dag."
+          }
+        }
+      }
+    },
+    "The licence already ended on %@; there is nothing to revoke." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De licentie is al afgelopen op %@; er is niets in te trekken."
+          }
+        }
+      }
+    },
+    "The licence only starts on %@; pick that day or later." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De licentie begint pas op %@; kies die dag of later."
+          }
+        }
+      }
+    },
+    "The licence this renews (%@) is not in the register." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De licentie die hiermee wordt verlengd (%@) staat niet in het register."
+          }
+        }
+      }
+    },
+    "The name is longer than %lld characters." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "The name is longer than %lld character."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "The name is longer than %lld characters."
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "De naam is langer dan %lld teken."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "De naam is langer dan %lld tekens."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "The signed licence differs from the draft. Nothing was recorded." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De ondertekende licentie wijkt af van het concept. Er is niets vastgelegd."
+          }
+        }
+      }
+    },
+    "The signed licence fails FerroEHR's check “%@”. Nothing was recorded." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De ondertekende licentie haalt de controle “%@” van FerroEHR niet. Er is niets vastgelegd."
+          }
+        }
+      }
+    },
+    "This is the last trusted key; set up another YubiKey first." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dit is de laatste vertrouwde sleutel; stel eerst een andere YubiKey in."
+          }
+        }
+      }
+    },
+    "This key signs nothing new already; it can only be retired." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze sleutel ondertekent al niets nieuws meer; hij kan alleen nog worden ingetrokken."
+          }
+        }
+      }
+    },
+    "This licence is already revoked." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze licentie is al ingetrokken."
+          }
+        }
+      }
+    },
+    "Trust the successor's key first, so a key stays in use." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertrouw eerst de sleutel van de opvolger, zodat er een sleutel in gebruik blijft."
+          }
+        }
+      }
+    },
+    "Type the customer's legal name, as in the agreement." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ de juridische naam van de klant, zoals in de overeenkomst."
+          }
+        }
+      }
+    },
+    "Valid on %@, until %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Valid on %1$@, until %2$@."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geldig op %1$@, tot %2$@."
+          }
+        }
+      }
+    },
+    "signers.json does not name %@." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "signers.json noemt %@ niet."
+          }
+        }
+      }
+    },
+    "signers.json is not a signer list: %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "signers.json is geen lijst met ondertekenaars: %@"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

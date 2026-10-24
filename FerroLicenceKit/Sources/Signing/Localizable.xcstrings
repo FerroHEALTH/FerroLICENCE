@@ -1,0 +1,348 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "A window asks for a PIN." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een venster vraagt om een pincode."
+          }
+        }
+      }
+    },
+    "A window asks for the current PIN and a new one, then the same for the Admin PIN. Factory PINs are 123456 and 12345678. Write the Admin PIN down and keep it away from the YubiKey." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een venster vraagt om de huidige pincode en een nieuwe, en daarna hetzelfde voor de beheerderspincode. De fabriekspincodes zijn 123456 en 12345678. Schrijf de beheerderspincode op en bewaar die apart van de YubiKey."
+          }
+        }
+      }
+    },
+    "A window asks for your Admin PIN once. After that every licence needs a touch on the YubiKey." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een venster vraagt één keer om je beheerderspincode. Daarna moet je voor elke licentie de YubiKey aanraken."
+          }
+        }
+      }
+    },
+    "A window asks for your Admin PIN once. After that the card asks for the PIN for every licence." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een venster vraagt één keer om je beheerderspincode. Daarna vraagt de kaart voor elke licentie om de pincode."
+          }
+        }
+      }
+    },
+    "Add the key to the trusted keys" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voeg de sleutel toe aan de vertrouwde sleutels"
+          }
+        }
+      }
+    },
+    "Ask for PINs in a window" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vraag pincodes in een venster"
+          }
+        }
+      }
+    },
+    "Ask for the PIN on every signature" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vraag de pincode bij elke handtekening"
+          }
+        }
+      }
+    },
+    "Cancelled." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geannuleerd."
+          }
+        }
+      }
+    },
+    "Change the PINs" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wijzig de pincodes"
+          }
+        }
+      }
+    },
+    "Check the YubiKey" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controleer de YubiKey"
+          }
+        }
+      }
+    },
+    "Create the key on the YubiKey" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maak de sleutel op de YubiKey"
+          }
+        }
+      }
+    },
+    "Creating the key…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De sleutel wordt gemaakt…"
+          }
+        }
+      }
+    },
+    "GnuPG asked something unexpected (%@); nothing more was answered." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GnuPG vroeg iets onverwachts (%@); er is niets meer beantwoord."
+          }
+        }
+      }
+    },
+    "GnuPG asks for PINs in a pinentry-mac window and never keeps one in the macOS Keychain." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GnuPG vraagt pincodes in een pinentry-mac-venster en bewaart er nooit een in de macOS-sleutelhanger."
+          }
+        }
+      }
+    },
+    "GnuPG creates an Ed25519 key on the YubiKey: no expiry, no copy anywhere else. Windows ask for the Admin PIN several times and the PIN once; each window is a separate step. Afterwards, print the revocation certificate GnuPG writes to ~/.gnupg/openpgp-revocs.d/ and keep it with the Admin PIN, away from the YubiKey." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GnuPG maakt een Ed25519-sleutel op de YubiKey: zonder vervaldatum, zonder kopie ergens anders. Vensters vragen een paar keer om de beheerderspincode en één keer om de pincode; elk venster is een aparte stap. Druk daarna het intrekkingscertificaat af dat GnuPG in ~/.gnupg/openpgp-revocs.d/ zet, en bewaar het bij de beheerderspincode, apart van de YubiKey."
+          }
+        }
+      }
+    },
+    "GnuPG is not installed. Run: brew install gnupg pinentry-mac" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GnuPG is niet geïnstalleerd. Voer uit: brew install gnupg pinentry-mac"
+          }
+        }
+      }
+    },
+    "One YubiKey 5 is plugged in, with no key on it yet." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Er is één YubiKey 5 aangesloten, nog zonder sleutel."
+          }
+        }
+      }
+    },
+    "Plug in your YubiKey." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sluit je YubiKey aan."
+          }
+        }
+      }
+    },
+    "Records the public key in keys/ and you in signers.json through a pull request, so FerroEHR trusts it from its next release. If you hold no key yet, it saves the key as a file instead; an owner records it from their account with Trust a New Key… in Keys." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legt de publieke sleutel vast in keys/ en jou in signers.json via een pull request, zodat FerroEHR hem vertrouwt vanaf de volgende release. Heb je nog geen sleutel, dan bewaart deze stap de sleutel als bestand; een eigenaar legt hem vast vanaf zijn account met Vertrouw een nieuwe sleutel… in Sleutels."
+          }
+        }
+      }
+    },
+    "Require a touch for every signature" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vereis een aanraking bij elke handtekening"
+          }
+        }
+      }
+    },
+    "Signing was cancelled in the PIN window." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het ondertekenen is geannuleerd in het pincodevenster."
+          }
+        }
+      }
+    },
+    "The PIN is blocked after three wrong tries. Unblock it with the Admin PIN: in Terminal run gpg --card-edit, then admin, passwd, and choose 2." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De pincode is geblokkeerd na drie verkeerde pogingen. Deblokkeer hem met de beheerderspincode: voer in Terminal gpg --card-edit uit, dan admin, passwd, en kies 2."
+          }
+        }
+      }
+    },
+    "The key on YubiKey %@ (%@) is not a trusted key." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The key on YubiKey %1$@ (%2$@) is not a trusted key."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De sleutel op YubiKey %1$@ (%2$@) is geen vertrouwde sleutel."
+          }
+        }
+      }
+    },
+    "The key was created on the YubiKey." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De sleutel is gemaakt op de YubiKey."
+          }
+        }
+      }
+    },
+    "Wrong PIN. %lld tries left." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Wrong PIN. %lld try left."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Wrong PIN. %lld tries left."
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Verkeerde pincode. Nog %lld poging."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Verkeerde pincode. Nog %lld pogingen."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Wrong PIN. 1 try left before the PIN is blocked." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verkeerde pincode. Nog 1 poging voordat de pincode wordt geblokkeerd."
+          }
+        }
+      }
+    },
+    "Wrong PIN. Each wrong PIN uses one of the card's three tries." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verkeerde pincode. Elke verkeerde pincode kost een van de drie pogingen van de kaart."
+          }
+        }
+      }
+    },
+    "Wrong PIN. The window asks again; three wrong PINs block the card." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verkeerde pincode. Het venster vraagt opnieuw; drie verkeerde pincodes blokkeren de kaart."
+          }
+        }
+      }
+    },
+    "YubiKey %@ holds no key yet. Set it up under Keys." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YubiKey %@ bevat nog geen sleutel. Stel hem in onder Sleutels."
+          }
+        }
+      }
+    },
+    "gpg %@ failed: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "gpg %1$@ failed: %2$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gpg %1$@ is mislukt: %2$@"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# .githooks/pre-commit (install: git config core.hooksPath .githooks)
+#
+# Two checks a commit must pass before it is recorded:
+#   1. no secret key material in the index;
+#   2. staged Swift passes `swift format lint --strict` (config: .swift-format).
+
+set -euo pipefail
+
+root="$(git rev-parse --show-toplevel)"
+bash "$root/scripts/checks/no-secret-material.sh" --staged
+
+swift_files=()
+while IFS= read -r f; do swift_files+=("$root/$f"); done < <(git diff --cached --name-only --diff-filter=ACMR -- '*.swift')
+if ((${#swift_files[@]})); then
+  if ! DEVELOPER_DIR="${DEVELOPER_DIR:-/Applications/Xcode.app/Contents/Developer}" \
+      swift format lint --strict --configuration "$root/.swift-format" "${swift_files[@]}" >&2; then
+    echo "swift format: run 'swift format format -i --recursive FerroLicenceKit FerroLICENCE' before committing" >&2
+    exit 1
+  fi
+fi

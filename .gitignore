@@ -1,0 +1,42 @@
+# Secret key material never enters this repository. These are the common
+# secret-file shapes; the real guard is scripts/checks/no-secret-material.sh
+# (content-based, run by the pre-commit hook and CI).
+*.gpg
+*.pgp
+*.key
+*.pem
+*.p12
+*.pfx
+*.skr
+*.sec
+*-secret.asc
+*_secret.asc
+*-revoke.asc
+*revocation*.asc
+
+target/
+.claude/settings.local.json
+
+# The ceremony keyring (GnuPG home directory): the secret primary, the signing
+# subkeys and the revocation certificate. Lives inside the working copy for
+# convenience and is NEVER committed; the secret scan is the backstop.
+.keyring/
+
+# Agent worktrees, one per task.
+.claude/worktrees/
+
+# Swift Package Manager and Xcode build output.
+.build/
+FerroLicenceKit/.build/
+/build/
+.swiftpm/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+
+# Apple's agent skills, exported per machine by scripts/dev/xcode-skills.sh.
+.claude/skills/*
+!.claude/skills/screenshots/
+
+# Finder writes these into any folder it opens.
+.DS_Store

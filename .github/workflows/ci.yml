@@ -1,0 +1,88 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions: {}
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # The xcode-27 image is Apple Silicon on macOS 27; the app needs Xcode 27.1.
+  DEVELOPER_DIR: /Applications/Xcode_27.1.app/Contents/Developer
+
+jobs:
+  kit:
+    name: kit tests, GnuPG interop required
+    runs-on: xcode-27
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: swift format (strict)
+        run: swift format lint --strict --recursive FerroLicenceKit FerroLICENCE scripts/ui/contact-sheet.swift scripts/release/verify-update.swift scripts/release/dmg-background.swift
+      - name: tests
+        env:
+          FERROLICENCE_REQUIRE_GPG: "1"
+        run: swift test --package-path FerroLicenceKit
+      - name: register-check passes on the register snapshot
+        env:
+          REGISTER_CHECK_AUTHOR: ${{ github.actor }}
+          REGISTER_CHECK_ACTOR: ${{ github.actor }}
+        run: |
+          snapshot=FerroLicenceKit/Tests/RegisterSnapshot
+          swift run --package-path FerroLicenceKit register-check "$snapshot" "$snapshot"
+
+  app:
+    name: app build, UI tests and the screenshot tour
+    runs-on: xcode-27
+    timeout-minutes: 45
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # Signed to run locally: the UI tests need a signed app, not a Developer ID.
+      - name: build and run the UI tests
+        run: |
+          xcodebuild test -project FerroLICENCE/FerroLICENCE.xcodeproj -scheme FerroLICENCE \
+            -destination 'platform=macOS,arch=arm64' -derivedDataPath build/DerivedData \
+            -resultBundlePath build/UITests.xcresult \
+            CODE_SIGN_STYLE=Manual CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM=
+      - name: the screenshot tour
+        env:
+          DERIVED: build/DerivedData
+        run: bash scripts/ui/screenshots.sh
+      - name: contact sheets
+        run: swift scripts/ui/contact-sheet.swift build/screenshots build/contact-sheets
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: always()
+        with:
+          name: screenshots
+          path: |
+            build/screenshots/
+            build/contact-sheets/
+            build/UITests.xcresult/
+          if-no-files-found: warn
+
+  guards:
+    name: secrets and shell
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: no secret material in the tree
+        run: bash scripts/checks/no-secret-material.sh
+      - name: shellcheck (style floor)
+        run: shellcheck --severity=style scripts/*/*.sh .githooks/* .claude/hooks/*.sh

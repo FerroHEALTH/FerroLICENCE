@@ -1,0 +1,24 @@
+// Build settings for the app that change by hand, in one place.
+//
+// MARKETING_VERSION is the app's version: the release workflow checks that
+// the tag, this value and the CHANGELOG.md section agree. The build number
+// is the CI run number, passed on the xcodebuild command line.
+MARKETING_VERSION = 0.2.0
+CURRENT_PROJECT_VERSION = 1
+
+// The register's repository, which the app reads and writes, as owner/name:
+// private, apart from this public one. A test build for the end-to-end run
+// points at the test repository (docs/setup.md).
+FL_REPOSITORY = FerroHEALTH/FerroLICENCE-register
+
+// The repository the app's releases come from, as owner/name.
+FL_RELEASES = FerroHEALTH/FerroLICENCE
+
+// The FerroLICENCE GitHub App's client id (public; the device flow needs no
+// secret). Empty until an organisation owner creates the app: docs/github-app.md.
+FL_GITHUB_CLIENT_ID = Iv23lihEWl5vWGdUno3R
+
+// Sparkle's EdDSA public key for updates, made on 2026-10-24. Its private
+// half is in the SPARKLE_PRIVATE_KEY repository secret and in the login
+// Keychain of the owner who made it, never in a file: docs/releasing.md.
+SPARKLE_PUBLIC_ED_KEY = CAMlb/hqw2ufjXJ22G5CxttIHhtwpCn/jE/KUSzkE34=

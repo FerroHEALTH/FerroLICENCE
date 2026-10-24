@@ -1,0 +1,3796 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+      "shouldTranslate" : false
+    },
+    "%@" : {
+      "shouldTranslate" : false
+    },
+    "%@ %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%@ ends in %lld days." : {
+      "comment" : "Notification: the customer, then the days left",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ ends in %#@count@."
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 2,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg day"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg days"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ eindigt over %#@count@."
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 2,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg dag"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg dagen"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%@ in signers.json" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ in signers.json"
+          }
+        }
+      }
+    },
+    "%@ licensed until %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ licensed until %2$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ heeft een licentie tot %2$@"
+          }
+        }
+      }
+    },
+    "%@ renewed until %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ renewed until %2$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ verlengd tot %2$@"
+          }
+        }
+      }
+    },
+    "%@ revoked from %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ revoked from %2$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ ingetrokken per %2$@"
+          }
+        }
+      }
+    },
+    "%@ · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%@ – %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ – %2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, %2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%@, until %@. Ready to send." : {
+      "comment" : "Notification: the customer, then the last day",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@, until %2$@. Ready to send."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@, tot %2$@. Klaar om te versturen."
+          }
+        }
+      }
+    },
+    "%@/%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@/%2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%@: %@" : {
+      "comment" : "Notification: the customer, then why it was not recorded",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@: %2$@"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "%@: %lld of %lld carry its mark; p = %lf" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@: %2$lld of %3$lld carry its mark; p = %4$lf"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@: %2$lld van %3$lld dragen het kenmerk; p = %4$lf"
+          }
+        }
+      }
+    },
+    "%lld identifiers" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld identifier"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld identifiers"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld identifier"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld identifiers"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld licences" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld licence"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld licences"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld licentie"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld licenties"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld licences on main" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld licence on main"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld licences on main"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld licentie op main"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld licenties op main"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%lld made after it was revoked" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld gemaakt nadat de licentie was ingetrokken"
+          }
+        }
+      }
+    },
+    "%lld made after the licence ended" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld gemaakt nadat de licentie was afgelopen"
+          }
+        }
+      }
+    },
+    "%lld of %lld carry its mark" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld of %2$lld carry its mark"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld van %2$lld dragen het kenmerk"
+          }
+        }
+      }
+    },
+    "%lld of %lld passed" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld of %2$lld passed"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld van %2$lld geslaagd"
+          }
+        }
+      }
+    },
+    "%lld still recording" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld still recording"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld still recording"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld wordt nog vastgelegd"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld worden nog vastgelegd"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "A handed-over key stays trusted and signs nothing new. Trust the successor's key first, with Trust a New Key… in Keys." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een overgedragen sleutel blijft vertrouwd en ondertekent niets nieuws meer. Vertrouw eerst de sleutel van de opvolger, met Vertrouw een nieuwe sleutel… in Sleutels."
+          }
+        }
+      }
+    },
+    "A handed-over key stays trusted and signs nothing new; the %lld licences it signed that still count keep working. Trust the successor's key first, with Trust a New Key… in Keys." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een overgedragen sleutel blijft vertrouwd en ondertekent niets nieuws meer; de %lld licenties die hij ondertekende en nog gelden, blijven werken. Vertrouw eerst de sleutel van de opvolger, met Vertrouw een nieuwe sleutel… in Sleutels."
+          }
+        }
+      }
+    },
+    "A handed-over key stays trusted and signs nothing new; the one licence it signed that still counts keeps working. Trust the successor's key first, with Trust a New Key… in Keys." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een overgedragen sleutel blijft vertrouwd en ondertekent niets nieuws meer; de ene licentie die hij ondertekende en nog geldt, blijft werken. Vertrouw eerst de sleutel van de opvolger, met Vertrouw een nieuwe sleutel… in Sleutels."
+          }
+        }
+      }
+    },
+    "A lost key stays trusted, and nobody signs with it again." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een kwijte sleutel blijft vertrouwd, en niemand ondertekent er nog mee."
+          }
+        }
+      }
+    },
+    "A lost key stays trusted, and nobody signs with it again. The %lld licences it signed that still count keep working." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een kwijte sleutel blijft vertrouwd, en niemand ondertekent er nog mee. De %lld licenties die ermee zijn ondertekend en nog gelden, blijven werken."
+          }
+        }
+      }
+    },
+    "A lost key stays trusted, and nobody signs with it again. The one licence it signed that still counts keeps working." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een kwijte sleutel blijft vertrouwd, en niemand ondertekent er nog mee. De ene licentie die ermee is ondertekend en nog geldt, blijft werken."
+          }
+        }
+      }
+    },
+    "A signed licence can never be changed. A mistake means a new licence." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een ondertekende licentie kan nooit meer worden gewijzigd. Een fout betekent een nieuwe licentie."
+          }
+        }
+      }
+    },
+    "About fifteen minutes. Each step is read back from the YubiKey, so you can stop and come back." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ongeveer een kwartier. Elke stap wordt van de YubiKey teruggelezen, dus je kunt stoppen en later verdergaan."
+          }
+        }
+      }
+    },
+    "Activity" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activiteit"
+          }
+        }
+      }
+    },
+    "All" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alles"
+          }
+        }
+      }
+    },
+    "All Customers" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle klanten"
+          }
+        }
+      }
+    },
+    "Ask the new holder to read out the fingerprint Set Up a YubiKey showed them, and compare it with this one. Trusting it lets them sign licences from their own GitHub account." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vraag de nieuwe houder de vingerafdruk voor te lezen die Stel een YubiKey in hun liet zien, en vergelijk die met deze. Na het vertrouwen kunnen ze vanaf hun eigen GitHub-account licenties ondertekenen."
+          }
+        }
+      }
+    },
+    "Attached is the FerroEHR licence for %@, valid from %@ to %@.\n\nFor your IT: place licence.asc at a path the FerroEHR server can read and set FERROEHR__LICENCE__FILE=/path/to/licence.asc (or [licence] file in ferroehr.toml). Restart the server. GET /ferroehr/rest/status reports the licence state. The server runs the same without it." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Attached is the FerroEHR licence for %1$@, valid from %2$@ to %3$@.\n\nFor your IT: place licence.asc at a path the FerroEHR server can read and set FERROEHR__LICENCE__FILE=/path/to/licence.asc (or [licence] file in ferroehr.toml). Restart the server. GET /ferroehr/rest/status reports the licence state. The server runs the same without it."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bijgevoegd is de FerroEHR-licentie voor %1$@, geldig van %2$@ tot en met %3$@.\n\nVoor jullie IT: zet licence.asc op een pad dat de FerroEHR-server kan lezen en stel FERROEHR__LICENCE__FILE=/pad/naar/licence.asc in (of [licence] file in ferroehr.toml). Start de server opnieuw. GET /ferroehr/rest/status toont de status van de licentie. De server werkt ook zonder."
+          }
+        }
+      }
+    },
+    "Attest Data" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gegevens attesteren"
+          }
+        }
+      }
+    },
+    "Back" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terug"
+          }
+        }
+      }
+    },
+    "By chance" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Door toeval"
+          }
+        }
+      }
+    },
+    "Can open pull requests" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kan pull requests openen"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuleer"
+          }
+        }
+      }
+    },
+    "Cannot open pull requests" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kan geen pull requests openen"
+          }
+        }
+      }
+    },
+    "Change Keys" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wijzig sleutels"
+          }
+        }
+      }
+    },
+    "Check" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controle"
+          }
+        }
+      }
+    },
+    "Check Again" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opnieuw controleren"
+          }
+        }
+      }
+    },
+    "Check Before Signing" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controleer vóór ondertekenen"
+          }
+        }
+      }
+    },
+    "Check Now" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controleer nu"
+          }
+        }
+      }
+    },
+    "Check a File" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bestand controleren"
+          }
+        }
+      }
+    },
+    "Check a Licence File" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controleer een licentiebestand"
+          }
+        }
+      }
+    },
+    "Check for Updates…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoek naar updates…"
+          }
+        }
+      }
+    },
+    "Check for updates automatically" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoek automatisch naar updates"
+          }
+        }
+      }
+    },
+    "Check the YubiKey" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controleer de YubiKey"
+          }
+        }
+      }
+    },
+    "Checks" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controles"
+          }
+        }
+      }
+    },
+    "Choose Another…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies een ander…"
+          }
+        }
+      }
+    },
+    "Choose File…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies bestand…"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sluit"
+          }
+        }
+      }
+    },
+    "Code %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code %@"
+          }
+        }
+      }
+    },
+    "Commercial" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Commercieel"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ga door"
+          }
+        }
+      }
+    },
+    "Contract" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contract"
+          }
+        }
+      }
+    },
+    "Copied" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gekopieerd"
+          }
+        }
+      }
+    },
+    "Copy Code and Open GitHub" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieer code en open GitHub"
+          }
+        }
+      }
+    },
+    "Copy Command" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieer opdracht"
+          }
+        }
+      }
+    },
+    "Copy Report" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieer rapport"
+          }
+        }
+      }
+    },
+    "Copy Setup Instructions" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieer installatie-instructies"
+          }
+        }
+      }
+    },
+    "Copy the full numbers for a letter or a case file" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieer de volledige cijfers voor een brief of een dossier"
+          }
+        }
+      }
+    },
+    "Copy what their IT needs to install the licence" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieer wat hun IT nodig heeft om de licentie te installeren"
+          }
+        }
+      }
+    },
+    "Current Licence" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Huidige licentie"
+          }
+        }
+      }
+    },
+    "Customer" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klant"
+          }
+        }
+      }
+    },
+    "Customer since %@ · %lld licences" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Customer since %1$@ · %#@count@"
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 2,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg licence"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg licences"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klant sinds %1$@ · %#@count@"
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 2,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg licentie"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg licenties"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Customers" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klanten"
+          }
+        }
+      }
+    },
+    "Download and install automatically" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download en installeer automatisch"
+          }
+        }
+      }
+    },
+    "Download to Downloads" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Download naar Downloads"
+          }
+        }
+      }
+    },
+    "Draft" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concept"
+          }
+        }
+      }
+    },
+    "Draft a licence for a new customer (⌘N)" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stel een licentie op voor een nieuwe klant (⌘N)"
+          }
+        }
+      }
+    },
+    "Draft the next licence for this customer" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stel de volgende licentie op voor deze klant"
+          }
+        }
+      }
+    },
+    "Drop a database export, a log or an API response here, or open it. Every identifier in it is read." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleep hier een database-export, een log of een API-antwoord heen, of open het. Elke identifier erin wordt gelezen."
+          }
+        }
+      }
+    },
+    "Drop a licence file here, paste its text, or open it. The check works offline, as FerroEHR does at boot." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleep hier een licentiebestand heen, plak de tekst, of open het. De controle werkt offline, zoals FerroEHR bij het opstarten."
+          }
+        }
+      }
+    },
+    "Earlier" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eerder"
+          }
+        }
+      }
+    },
+    "Ended %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afgelopen %@"
+          }
+        }
+      }
+    },
+    "Ended on %@, with no new licence" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afgelopen op %@, zonder nieuwe licentie"
+          }
+        }
+      }
+    },
+    "Ends" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eindigt"
+          }
+        }
+      }
+    },
+    "Ends in %lld days" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Ends in %lld day"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Ends in %lld days"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Eindigt over %lld dag"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Eindigt over %lld dagen"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Ends in %lld days · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ends in %#@count@ · %2$@"
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 1,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg day"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg days"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eindigt over %#@count@ · %2$@"
+          },
+          "substitutions" : {
+            "count" : {
+              "argNum" : 1,
+              "formatSpecifier" : "lld",
+              "variations" : {
+                "plural" : {
+                  "one" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg dag"
+                    }
+                  },
+                  "other" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "%arg dagen"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Ends today" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eindigt vandaag"
+          }
+        }
+      }
+    },
+    "Every licence issued shows here." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elke uitgegeven licentie verschijnt hier."
+          }
+        }
+      }
+    },
+    "Every licence, revocation and key recorded shows here." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elke vastgelegde licentie, intrekking en sleutel verschijnt hier."
+          }
+        }
+      }
+    },
+    "Evidence" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewijs"
+          }
+        }
+      }
+    },
+    "Exact text the YubiKey signs" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exacte tekst die de YubiKey ondertekent"
+          }
+        }
+      }
+    },
+    "FerroLICENCE" : {
+      "shouldTranslate" : false
+    },
+    "FerroLICENCE %@ is available" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FerroLICENCE %@ is beschikbaar"
+          }
+        }
+      }
+    },
+    "FerroLICENCE attestation of %@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "FerroLICENCE attestation of %1$@, %2$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FerroLICENCE-attestatie van %1$@, %2$@"
+          }
+        }
+      }
+    },
+    "FerroLICENCE reads the register and opens pull requests on %@/%@ as you." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "FerroLICENCE reads the register and opens pull requests on %1$@/%2$@ as you."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "FerroLICENCE leest het register en opent namens jou pull requests op %1$@/%2$@."
+          }
+        }
+      }
+    },
+    "Filter" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filter"
+          }
+        }
+      }
+    },
+    "Fingerprint" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vingerafdruk"
+          }
+        }
+      }
+    },
+    "Folder" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Map"
+          }
+        }
+      }
+    },
+    "For example EH-2026-021" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bijvoorbeeld EH-2026-021"
+          }
+        }
+      }
+    },
+    "For their IT" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voor hun IT"
+          }
+        }
+      }
+    },
+    "Free" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratis"
+          }
+        }
+      }
+    },
+    "Free licence until %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratis licentie tot %@"
+          }
+        }
+      }
+    },
+    "General" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algemeen"
+          }
+        }
+      }
+    },
+    "Genuine" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Echt"
+          }
+        }
+      }
+    },
+    "GitHub" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub"
+          }
+        }
+      }
+    },
+    "GitHub account" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub-account"
+          }
+        }
+      }
+    },
+    "GitHub releases, %@/%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "GitHub releases, %1$@/%2$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub-releases, %1$@/%2$@"
+          }
+        }
+      }
+    },
+    "GnuPG" : {
+      "shouldTranslate" : false
+    },
+    "GnuPG %@ and pinentry-mac" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GnuPG %@ en pinentry-mac"
+          }
+        }
+      }
+    },
+    "GnuPG %@, but no pinentry-mac" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GnuPG %@, maar geen pinentry-mac"
+          }
+        }
+      }
+    },
+    "GnuPG is not installed" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GnuPG is niet geïnstalleerd"
+          }
+        }
+      }
+    },
+    "GnuPG is not installed. Run: brew install gnupg pinentry-mac" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GnuPG is niet geïnstalleerd. Voer uit: brew install gnupg pinentry-mac"
+          }
+        }
+      }
+    },
+    "Handed over to someone with their own key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overgedragen aan iemand met een eigen sleutel"
+          }
+        }
+      }
+    },
+    "Has no key yet. Set it up to sign licences." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heeft nog geen sleutel. Stel hem in om licenties te ondertekenen."
+          }
+        }
+      }
+    },
+    "Holder" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Houder"
+          }
+        }
+      }
+    },
+    "Holds %@, which is not your trusted key." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bevat %@, en dat is niet jouw vertrouwde sleutel."
+          }
+        }
+      }
+    },
+    "Holds the key of %@. Ready to sign." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bevat de sleutel van %@. Klaar om te ondertekenen."
+          }
+        }
+      }
+    },
+    "Identifiers read: %lld; version 7: %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Identifiers read: %1$lld; version 7: %2$lld"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gelezen identifiers: %1$lld; versie 7: %2$lld"
+          }
+        }
+      }
+    },
+    "In FerroEHR" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In FerroEHR"
+          }
+        }
+      }
+    },
+    "Include test versions" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Testversies meenemen"
+          }
+        }
+      }
+    },
+    "Key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleutel"
+          }
+        }
+      }
+    },
+    "Key file" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleutelbestand"
+          }
+        }
+      }
+    },
+    "Key holder" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleutelhouder"
+          }
+        }
+      }
+    },
+    "Keys" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleutels"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taal"
+          }
+        }
+      }
+    },
+    "Last checked" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laatst gecontroleerd"
+          }
+        }
+      }
+    },
+    "Later" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Later"
+          }
+        }
+      }
+    },
+    "Legal name, as in the agreement" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Juridische naam, zoals in de overeenkomst"
+          }
+        }
+      }
+    },
+    "Licence" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licentie"
+          }
+        }
+      }
+    },
+    "Licence %@, %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Licence %1$@, %2$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licentie %1$@, %2$@"
+          }
+        }
+      }
+    },
+    "Licence Recorded" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licentie vastgelegd"
+          }
+        }
+      }
+    },
+    "Licence file" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licentiebestand"
+          }
+        }
+      }
+    },
+    "Licence recorded" : {
+      "comment" : "Notification title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licentie vastgelegd"
+          }
+        }
+      }
+    },
+    "Licences" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Licenties"
+          }
+        }
+      }
+    },
+    "Lost, and nobody else has the PIN" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kwijt, en niemand anders heeft de pincode"
+          }
+        }
+      }
+    },
+    "Made" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemaakt"
+          }
+        }
+      }
+    },
+    "Made by a FerroEHR server running without a licence" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemaakt door een FerroEHR-server zonder licentie"
+          }
+        }
+      }
+    },
+    "Made under licence %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemaakt onder licentie %@"
+          }
+        }
+      }
+    },
+    "Made under the licence of %@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Made under the licence of %1$@ (%2$@)"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gemaakt onder de licentie van %1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "Mark as Handed Over" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markeer als overgedragen"
+          }
+        }
+      }
+    },
+    "Mark as Lost" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markeer als kwijt"
+          }
+        }
+      }
+    },
+    "Merge into main" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samenvoegen in main"
+          }
+        }
+      }
+    },
+    "More" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meer"
+          }
+        }
+      }
+    },
+    "More actions for this licence" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meer acties voor deze licentie"
+          }
+        }
+      }
+    },
+    "Needs Attention" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vraagt aandacht"
+          }
+        }
+      }
+    },
+    "Needs attention" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vraagt aandacht"
+          }
+        }
+      }
+    },
+    "New Licence" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuwe licentie"
+          }
+        }
+      }
+    },
+    "New Licence…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nieuwe licentie…"
+          }
+        }
+      }
+    },
+    "Next sync" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volgende synchronisatie"
+          }
+        }
+      }
+    },
+    "No Activity" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen activiteit"
+          }
+        }
+      }
+    },
+    "No Customer Selected" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen klant gekozen"
+          }
+        }
+      }
+    },
+    "No Customers Yet" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog geen klanten"
+          }
+        }
+      }
+    },
+    "No FerroEHR identifiers in this file: it holds no version 7 UUIDs." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen FerroEHR-identifiers in dit bestand: het bevat geen UUID's van versie 7."
+          }
+        }
+      }
+    },
+    "No Longer Trusted" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niet langer vertrouwd"
+          }
+        }
+      }
+    },
+    "No YubiKey plugged in" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen YubiKey aangesloten"
+          }
+        }
+      }
+    },
+    "No YubiKey plugged in. Checking and attesting work without one." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen YubiKey aangesloten. Controleren en attesteren werken ook zonder."
+          }
+        }
+      }
+    },
+    "No: check and attest only" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nee: alleen controleren en attesteren"
+          }
+        }
+      }
+    },
+    "None plugged in" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen aangesloten"
+          }
+        }
+      }
+    },
+    "Not a key holder: this Mac can check and attest only" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen sleutelhouder: deze Mac kan alleen controleren en attesteren"
+          }
+        }
+      }
+    },
+    "Not installed" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niet geïnstalleerd"
+          }
+        }
+      }
+    },
+    "Not made under any licence in the register, nor by an unlicensed server. %lld identifiers read." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Not made under any licence in the register, nor by an unlicensed server. %lld identifier read."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Not made under any licence in the register, nor by an unlicensed server. %lld identifiers read."
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Niet gemaakt onder een licentie uit het register, en ook niet door een server zonder licentie. %lld identifier gelezen."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Niet gemaakt onder een licentie uit het register, en ook niet door een server zonder licentie. %lld identifiers gelezen."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Not recorded" : {
+      "comment" : "Notification title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niet vastgelegd"
+          }
+        }
+      }
+    },
+    "Not signed by one of our keys" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niet ondertekend met een van onze sleutels"
+          }
+        }
+      }
+    },
+    "Not signed in" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niet ingelogd"
+          }
+        }
+      }
+    },
+    "Not synced: no connection" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niet gesynchroniseerd: geen verbinding"
+          }
+        }
+      }
+    },
+    "Not yet" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nog niet"
+          }
+        }
+      }
+    },
+    "Nothing leaves your Mac until the licence passes FerroEHR's checks." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niets verlaat je Mac voordat de licentie door de controles van FerroEHR komt."
+          }
+        }
+      }
+    },
+    "Nothing pending" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niets in behandeling"
+          }
+        }
+      }
+    },
+    "Now" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nu"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "Offline copy" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Offline kopie"
+          }
+        }
+      }
+    },
+    "Offline copy from %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Offline kopie van %@"
+          }
+        }
+      }
+    },
+    "Open File…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open bestand…"
+          }
+        }
+      }
+    },
+    "Open Pull Request" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open pull request"
+          }
+        }
+      }
+    },
+    "Open Pull Request #%lld" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open pull request #%lld"
+          }
+        }
+      }
+    },
+    "Open pull request #%lld on GitHub" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open pull request #%lld op GitHub"
+          }
+        }
+      }
+    },
+    "Opening a pull request on GitHub" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Een pull request openen op GitHub"
+          }
+        }
+      }
+    },
+    "Open…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open…"
+          }
+        }
+      }
+    },
+    "PIN tries left" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resterende pinpogingen"
+          }
+        }
+      }
+    },
+    "PIN window" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pincodevenster"
+          }
+        }
+      }
+    },
+    "PINs Already Changed" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pincodes al gewijzigd"
+          }
+        }
+      }
+    },
+    "Pasted text" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geplakte tekst"
+          }
+        }
+      }
+    },
+    "Pick a customer on the left." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kies links een klant."
+          }
+        }
+      }
+    },
+    "Plug in your YubiKey" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sluit je YubiKey aan"
+          }
+        }
+      }
+    },
+    "Plug in your YubiKey." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sluit je YubiKey aan."
+          }
+        }
+      }
+    },
+    "Pull request %lld" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pull request %lld"
+          }
+        }
+      }
+    },
+    "Pull request opened on GitHub" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pull request geopend op GitHub"
+          }
+        }
+      }
+    },
+    "Read them this fingerprint" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lees ze deze vingerafdruk voor"
+          }
+        }
+      }
+    },
+    "Ready" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gereed"
+          }
+        }
+      }
+    },
+    "Ready to Issue" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Klaar om uit te geven"
+          }
+        }
+      }
+    },
+    "Reason" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reden"
+          }
+        }
+      }
+    },
+    "Record a YubiKey that someone else set up, from the key file they sent you." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leg een YubiKey vast die iemand anders heeft ingesteld, uit het sleutelbestand dat die je stuurde."
+          }
+        }
+      }
+    },
+    "Record the Key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leg de sleutel vast"
+          }
+        }
+      }
+    },
+    "Record why it signs nothing new, so the register says which licences it may still sign." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leg vast waarom hij niets nieuws meer ondertekent, zodat het register zegt welke licenties hij nog mag ondertekenen."
+          }
+        }
+      }
+    },
+    "Recorded" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vastgelegd"
+          }
+        }
+      }
+    },
+    "Recorded by %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vastgelegd door %@"
+          }
+        }
+      }
+    },
+    "Recorded in the register in [#%lld](%@). %@ can use FerroEHR commercially until %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Recorded in the register in [#%1$lld](%2$@). %3$@ can use FerroEHR commercially until %4$@."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vastgelegd in het register in [#%1$lld](%2$@). %3$@ mag FerroEHR commercieel gebruiken tot %4$@."
+          }
+        }
+      }
+    },
+    "Recorded in the register in [#%lld](%@). %@ can use FerroEHR until %@." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Recorded in the register in [#%1$lld](%2$@). %3$@ can use FerroEHR until %4$@."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vastgelegd in het register in [#%1$lld](%2$@). %3$@ mag FerroEHR gebruiken tot %4$@."
+          }
+        }
+      }
+    },
+    "Recording" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vastleggen"
+          }
+        }
+      }
+    },
+    "Recording the Licence" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De licentie wordt vastgelegd"
+          }
+        }
+      }
+    },
+    "Register" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register"
+          }
+        }
+      }
+    },
+    "Register not synced" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register niet gesynchroniseerd"
+          }
+        }
+      }
+    },
+    "Register synced" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register gesynchroniseerd"
+          }
+        }
+      }
+    },
+    "Release Notes" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Release-opmerkingen"
+          }
+        }
+      }
+    },
+    "Releases marked as pre-release on GitHub" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Releases die op GitHub als pre-release zijn gemarkeerd"
+          }
+        }
+      }
+    },
+    "Renew %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verleng %@"
+          }
+        }
+      }
+    },
+    "Renewal due" : {
+      "comment" : "Notification title",
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verlenging nodig"
+          }
+        }
+      }
+    },
+    "Renew…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verleng…"
+          }
+        }
+      }
+    },
+    "Repository" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repository"
+          }
+        }
+      }
+    },
+    "Result" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Resultaat"
+          }
+        }
+      }
+    },
+    "Retire Key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trek sleutel in"
+          }
+        }
+      }
+    },
+    "Retiring moves its public key to keys/retired/, and FerroEHR stops trusting it from its next release. No licence it signed still counts." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intrekken verplaatst de publieke sleutel naar keys/retired/, en FerroEHR vertrouwt hem niet meer vanaf de volgende release. Geen licentie die ermee is ondertekend geldt nog."
+          }
+        }
+      }
+    },
+    "Retiring moves its public key to keys/retired/, and FerroEHR stops trusting it from its next release. The %lld licences it signed that still count must be issued again with the other key." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intrekken verplaatst de publieke sleutel naar keys/retired/, en FerroEHR vertrouwt hem niet meer vanaf de volgende release. De %lld licenties die ermee zijn ondertekend en nog gelden, moeten opnieuw worden uitgegeven met de andere sleutel."
+          }
+        }
+      }
+    },
+    "Retiring moves its public key to keys/retired/, and FerroEHR stops trusting it from its next release. The one licence it signed that still counts must be issued again with the other key." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intrekken verplaatst de publieke sleutel naar keys/retired/, en FerroEHR vertrouwt hem niet meer vanaf de volgende release. De ene licentie die ermee is ondertekend en nog geldt, moet opnieuw worden uitgegeven met de andere sleutel."
+          }
+        }
+      }
+    },
+    "Revocations" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intrekkingen"
+          }
+        }
+      }
+    },
+    "Revoke" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trek in"
+          }
+        }
+      }
+    },
+    "Revoke %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trek %@ in"
+          }
+        }
+      }
+    },
+    "Revoked %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingetrokken %@"
+          }
+        }
+      }
+    },
+    "Revoked from %@: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Revoked from %1$@: %2$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingetrokken per %1$@: %2$@"
+          }
+        }
+      }
+    },
+    "Revoke…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trek in…"
+          }
+        }
+      }
+    },
+    "Run This Step" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voer deze stap uit"
+          }
+        }
+      }
+    },
+    "Runs one year from today. The contract reference stays in the register; it is never put in the licence." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loopt een jaar vanaf vandaag. De contractreferentie blijft in het register; ze komt nooit in de licentie."
+          }
+        }
+      }
+    },
+    "Same as macOS" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zelfde als macOS"
+          }
+        }
+      }
+    },
+    "Save Licence File…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewaar licentiebestand…"
+          }
+        }
+      }
+    },
+    "Save licence.asc in your Downloads folder" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewaar licence.asc in je map Downloads"
+          }
+        }
+      }
+    },
+    "Save the Key for an Owner" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewaar de sleutel voor een eigenaar"
+          }
+        }
+      }
+    },
+    "Saved as %@ in Downloads" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewaard als %@ in Downloads"
+          }
+        }
+      }
+    },
+    "Saved as %@ in Downloads. Send it to an owner, who trusts it with Trust a New Key… in Keys." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bewaard als %@ in Downloads. Stuur het naar een eigenaar, die het vertrouwt met Vertrouw een nieuwe sleutel… in Sleutels."
+          }
+        }
+      }
+    },
+    "Saved, %lld licences" : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Saved, %lld licence"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Saved, %lld licences"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Bewaard, %lld licentie"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Bewaard, %lld licenties"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Search Activity" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoek in activiteit"
+          }
+        }
+      }
+    },
+    "Search Customers" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zoek klanten"
+          }
+        }
+      }
+    },
+    "Set Up a YubiKey" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stel een YubiKey in"
+          }
+        }
+      }
+    },
+    "Set Up a YubiKey…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stel een YubiKey in…"
+          }
+        }
+      }
+    },
+    "Show in Finder" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toon in Finder"
+          }
+        }
+      }
+    },
+    "Show only licences, revocations or keys" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toon alleen licenties, intrekkingen of sleutels"
+          }
+        }
+      }
+    },
+    "Sign" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onderteken"
+          }
+        }
+      }
+    },
+    "Sign In with GitHub" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log in met GitHub"
+          }
+        }
+      }
+    },
+    "Sign Out" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log uit"
+          }
+        }
+      }
+    },
+    "Sign in with GitHub" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log in met GitHub"
+          }
+        }
+      }
+    },
+    "Sign in with GitHub first." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log eerst in met GitHub."
+          }
+        }
+      }
+    },
+    "Sign with Your YubiKey" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onderteken met je YubiKey"
+          }
+        }
+      }
+    },
+    "Sign with YubiKey" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Onderteken met YubiKey"
+          }
+        }
+      }
+    },
+    "Signed by" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ondertekend door"
+          }
+        }
+      }
+    },
+    "Signed by %@, but not in the register" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ondertekend door %@, maar niet in het register"
+          }
+        }
+      }
+    },
+    "Signed by %@, in the register" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ondertekend door %@, in het register"
+          }
+        }
+      }
+    },
+    "Signed by %@, revoked from %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Signed by %1$@, revoked from %2$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ondertekend door %1$@, ingetrokken per %2$@"
+          }
+        }
+      }
+    },
+    "Signed in as %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingelogd als %@"
+          }
+        }
+      }
+    },
+    "Signed on YubiKey %@ and checked" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ondertekend op YubiKey %@ en gecontroleerd"
+          }
+        }
+      }
+    },
+    "Signing" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ondertekenen"
+          }
+        }
+      }
+    },
+    "Someone else may have it and its PIN" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iemand anders heeft hem mogelijk, met de pincode"
+          }
+        }
+      }
+    },
+    "Source" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bron"
+          }
+        }
+      }
+    },
+    "Starts" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Begint"
+          }
+        }
+      }
+    },
+    "Starts %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Begint %@"
+          }
+        }
+      }
+    },
+    "Starts on %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Begint op %@"
+          }
+        }
+      }
+    },
+    "Starts the day after the current licence ends and runs one year. The contract reference stays in the register; it is never put in the licence." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Begint de dag nadat de huidige licentie eindigt en loopt een jaar. De contractreferentie blijft in het register; ze komt nooit in de licentie."
+          }
+        }
+      }
+    },
+    "Step %lld of %lld: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Step %1$lld of %2$lld: %3$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stap %1$lld van %2$lld: %3$@"
+          }
+        }
+      }
+    },
+    "Stop Using a Key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop met een sleutel"
+          }
+        }
+      }
+    },
+    "Stop Using a Key…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop met een sleutel…"
+          }
+        }
+      }
+    },
+    "Stops from" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stopt per"
+          }
+        }
+      }
+    },
+    "Sync" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synchroniseer"
+          }
+        }
+      }
+    },
+    "Sync Now" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synchroniseer nu"
+          }
+        }
+      }
+    },
+    "Sync with GitHub (⌘R)" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synchroniseer met GitHub (⌘R)"
+          }
+        }
+      }
+    },
+    "Synced %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gesynchroniseerd %@"
+          }
+        }
+      }
+    },
+    "Syncing…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Synchroniseren…"
+          }
+        }
+      }
+    },
+    "Takes effect the next time FerroLICENCE opens." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Werkt de volgende keer dat FerroLICENCE opent."
+          }
+        }
+      }
+    },
+    "That file is larger than 64 MB." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dat bestand is groter dan 64 MB."
+          }
+        }
+      }
+    },
+    "That file is not text." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dat bestand is geen tekst."
+          }
+        }
+      }
+    },
+    "The Licence File Was Not Saved" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het licentiebestand is niet bewaard"
+          }
+        }
+      }
+    },
+    "The Register Does Not Read" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het register is niet leesbaar"
+          }
+        }
+      }
+    },
+    "The YubiKey plugged in does not hold your trusted key." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De aangesloten YubiKey bevat niet jouw vertrouwde sleutel."
+          }
+        }
+      }
+    },
+    "The change is recorded in the register." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De wijziging is vastgelegd in het register."
+          }
+        }
+      }
+    },
+    "The contract clause or the letter" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Het contractartikel of de brief"
+          }
+        }
+      }
+    },
+    "The key is recorded in the register." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De sleutel is vastgelegd in het register."
+          }
+        }
+      }
+    },
+    "The key of %@ handed over" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleutel van %@ overgedragen"
+          }
+        }
+      }
+    },
+    "The key of %@ marked as lost" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleutel van %@ als kwijt gemarkeerd"
+          }
+        }
+      }
+    },
+    "The key of %@ retired" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleutel van %@ ingetrokken"
+          }
+        }
+      }
+    },
+    "The key of %@ trusted" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleutel van %@ vertrouwd"
+          }
+        }
+      }
+    },
+    "The keys of %@ and %@ trusted" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The keys of %1$@ and %2$@ trusted"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sleutels van %1$@ en %2$@ vertrouwd"
+          }
+        }
+      }
+    },
+    "The revocation is recorded in the register." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De intrekking is vastgelegd in het register."
+          }
+        }
+      }
+    },
+    "Their FerroEHR keeps running; an offline licence cannot be switched off. This records that it no longer counts, as evidence if their data is checked later. The record can never be changed." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hun FerroEHR blijft draaien; een offline licentie kan niet worden uitgezet. Dit legt vast dat ze niet meer geldt, als bewijs als hun gegevens later worden gecontroleerd. De vastlegging kan nooit meer worden gewijzigd."
+          }
+        }
+      }
+    },
+    "This Licence" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze licentie"
+          }
+        }
+      }
+    },
+    "This Mac" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze Mac"
+          }
+        }
+      }
+    },
+    "This YubiKey is set up and its key is trusted. FerroEHR trusts it from its next release." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze YubiKey is ingesteld en de sleutel wordt vertrouwd. FerroEHR vertrouwt hem vanaf de volgende release."
+          }
+        }
+      }
+    },
+    "This YubiKey's PINs are no longer the factory PINs" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De pincodes van deze YubiKey zijn niet meer de fabriekspincodes"
+          }
+        }
+      }
+    },
+    "This build has no GitHub App client id. An organisation owner creates the app once: see docs/github-app.md." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deze build heeft geen client-id van de GitHub App. Een organisatie-eigenaar maakt de app eenmalig aan: zie docs/github-app.md."
+          }
+        }
+      }
+    },
+    "This is not a licence file. A licence file starts with -----BEGIN PGP SIGNED MESSAGE-----." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dit is geen licentiebestand. Een licentiebestand begint met -----BEGIN PGP SIGNED MESSAGE-----."
+          }
+        }
+      }
+    },
+    "Today" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vandaag"
+          }
+        }
+      }
+    },
+    "Tools" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hulpmiddelen"
+          }
+        }
+      }
+    },
+    "Touch your YubiKey when its light blinks" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raak je YubiKey aan als het lampje knippert"
+          }
+        }
+      }
+    },
+    "Trust Key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertrouw sleutel"
+          }
+        }
+      }
+    },
+    "Trust a New Key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertrouw een nieuwe sleutel"
+          }
+        }
+      }
+    },
+    "Trust a New Key…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertrouw een nieuwe sleutel…"
+          }
+        }
+      }
+    },
+    "Trust a YubiKey someone else set up, or stop using one" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertrouw een YubiKey die iemand anders instelde, of stop met een sleutel"
+          }
+        }
+      }
+    },
+    "Trusted Keys" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertrouwde sleutels"
+          }
+        }
+      }
+    },
+    "Type" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Soort"
+          }
+        }
+      }
+    },
+    "Type %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ %@"
+          }
+        }
+      }
+    },
+    "Type REVOKE" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ REVOKE"
+          }
+        }
+      }
+    },
+    "Type TRUST" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ TRUST"
+          }
+        }
+      }
+    },
+    "Type your PIN in the window that opened" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typ je pincode in het venster dat openging"
+          }
+        }
+      }
+    },
+    "Updates" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Updates"
+          }
+        }
+      }
+    },
+    "Update…" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Werk bij…"
+          }
+        }
+      }
+    },
+    "Valid" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geldig"
+          }
+        }
+      }
+    },
+    "Valid until %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geldig tot %@"
+          }
+        }
+      }
+    },
+    "Version" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versie"
+          }
+        }
+      }
+    },
+    "Waiting for GitHub… the code works for %lld minutes." : {
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Waiting for GitHub… the code works for %lld minute."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Waiting for GitHub… the code works for %lld minutes."
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Wachten op GitHub… de code werkt nog %lld minuut."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Wachten op GitHub… de code werkt nog %lld minuten."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Where" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waar"
+          }
+        }
+      }
+    },
+    "Why" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Waarom"
+          }
+        }
+      }
+    },
+    "Yesterday" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gisteren"
+          }
+        }
+      }
+    },
+    "You can close this; a notification says when the licence is recorded." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je kunt dit sluiten; een melding laat weten wanneer de licentie is vastgelegd."
+          }
+        }
+      }
+    },
+    "You have %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je hebt %@"
+          }
+        }
+      }
+    },
+    "Your GitHub account cannot open pull requests on the repository." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je GitHub-account kan geen pull requests openen op de repository."
+          }
+        }
+      }
+    },
+    "Your GitHub account is not a key holder in signers.json, so this Mac can only check and attest." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je GitHub-account is geen sleutelhouder in signers.json, dus deze Mac kan alleen controleren en attesteren."
+          }
+        }
+      }
+    },
+    "Your YubiKey, %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je YubiKey, %@"
+          }
+        }
+      }
+    },
+    "Your full name" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je volledige naam"
+          }
+        }
+      }
+    },
+    "Your key is marked handed over, so it signs nothing new." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je sleutel is gemarkeerd als overgedragen en ondertekent dus niets nieuws."
+          }
+        }
+      }
+    },
+    "Your key is marked lost, so it signs nothing new. Set up a new YubiKey." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je sleutel is gemarkeerd als kwijt en ondertekent dus niets nieuws. Stel een nieuwe YubiKey in."
+          }
+        }
+      }
+    },
+    "YubiKey" : {
+      "shouldTranslate" : false
+    },
+    "YubiKey %@ does not hold your key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YubiKey %@ bevat niet jouw sleutel"
+          }
+        }
+      }
+    },
+    "YubiKey %@ does not hold your trusted key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YubiKey %@ bevat niet jouw vertrouwde sleutel"
+          }
+        }
+      }
+    },
+    "YubiKey %@ holds your key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YubiKey %@ bevat jouw sleutel"
+          }
+        }
+      }
+    },
+    "YubiKey %@ ready to sign" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YubiKey %@ klaar om te ondertekenen"
+          }
+        }
+      }
+    },
+    "YubiKey 5C" : {
+      "shouldTranslate" : false
+    },
+    "about %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ongeveer %@"
+          }
+        }
+      }
+    },
+    "commercial" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "commercieel"
+          }
+        }
+      }
+    },
+    "fewer than 1 in 10%@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "minder dan 1 op 10%@"
+          }
+        }
+      }
+    },
+    "fewer than 1 in 10³⁰⁰" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "minder dan 1 op 10³⁰⁰"
+          }
+        }
+      }
+    },
+    "free" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gratis"
+          }
+        }
+      }
+    },
+    "licence.asc is missing from the register." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "licence.asc ontbreekt in het register."
+          }
+        }
+      }
+    },
+    "licence.asc no longer matches its record." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "licence.asc komt niet meer overeen met de vastlegging."
+          }
+        }
+      }
+    },
+    "licence.asc · %@" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "licence.asc · %@"
+          }
+        }
+      }
+    },
+    "light blinking: touch it now" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lampje knippert: raak hem nu aan"
+          }
+        }
+      }
+    },
+    "software key" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "softwaresleutel"
+          }
+        }
+      }
+    },
+    "· added in" : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "· toegevoegd in"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

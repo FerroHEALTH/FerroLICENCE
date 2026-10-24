@@ -1,0 +1,99 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@": {
+      "shouldTranslate": false
+    },
+    "Exactly one signature, of the right kind": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Precies één handtekening, van de juiste soort"
+          }
+        }
+      }
+    },
+    "Key is allowed to sign": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sleutel mag ondertekenen"
+          }
+        }
+      }
+    },
+    "Key is intact": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sleutel is intact"
+          }
+        }
+      }
+    },
+    "Signature matches the text": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Handtekening past bij de tekst"
+          }
+        }
+      }
+    },
+    "Signed before the key expired": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondertekend voordat de sleutel verliep"
+          }
+        }
+      }
+    },
+    "Signed by a key we trust": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondertekend met een sleutel die we vertrouwen"
+          }
+        }
+      }
+    },
+    "Signed by the key itself": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondertekend met de sleutel zelf"
+          }
+        }
+      }
+    },
+    "Text is a valid licence": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tekst is een geldige licentie"
+          }
+        }
+      }
+    },
+    "The day falls inside the valid dates": {
+      "localizations": {
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De dag valt binnen de geldige data"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

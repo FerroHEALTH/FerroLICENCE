@@ -2,7 +2,7 @@
 //
 // MARKETING_VERSION is the app's version: the release workflow checks that
 // the tag, this value and the CHANGELOG.md section agree. The build number
-// is the CI run number, passed on the xcodebuild command line.
+// is the release run's number plus 100, passed on the xcodebuild command line.
 MARKETING_VERSION = 0.2.0
 CURRENT_PROJECT_VERSION = 1
 

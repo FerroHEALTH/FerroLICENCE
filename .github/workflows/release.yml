@@ -73,10 +73,14 @@ jobs:
           read -r -a existing <<<"$(security list-keychains -d user | tr -d '"' | tr '\n' ' ')"
           security list-keychains -d user -s "$keychain" "${existing[@]}"
           rm "$RUNNER_TEMP/developer-id.p12"
+      # The build number is the run number plus 100: the releases before
+      # 2026-10-24 came from the repository that is now the register, and
+      # went up to build 4. Sparkle never installs a lower build.
       - name: archive
         env:
           BUILD: ${{ github.run_number }}
         run: |
+          BUILD=$((BUILD + 100))
           xcodebuild archive -project FerroLICENCE/FerroLICENCE.xcodeproj -scheme FerroLICENCE -configuration Release \
             -destination 'generic/platform=macOS' -archivePath build/FerroLICENCE.xcarchive \
             -clonedSourcePackagesDirPath build/SourcePackages \

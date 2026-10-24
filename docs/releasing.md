@@ -9,8 +9,9 @@ through Sparkle (`docs/design.md` §12).
 
 - The **app** follows SemVer: `MARKETING_VERSION` in
   `FerroLICENCE/App.xcconfig`. The build number (`CURRENT_PROJECT_VERSION`)
-  is the release run's number, so it only goes up; Sparkle compares build
-  numbers and never installs a lower one.
+  is the release run's number plus 100, so it only goes up, also past the
+  builds released from the repository before the split (up to 4); Sparkle
+  compares build numbers and never installs a lower one.
 - The **token format** and the **stamp** are FerroEHR's and are named in the
   changelog when they change (`CHANGELOG.md` preamble).
 

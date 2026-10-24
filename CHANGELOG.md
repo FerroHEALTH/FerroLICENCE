@@ -244,4 +244,3 @@ when they change:
 
 [Unreleased]: https://github.com/FerroHEALTH/FerroLICENCE/compare/v0.2.0...HEAD
 [0.2.0]: https://github.com/FerroHEALTH/FerroLICENCE/releases/tag/v0.2.0
-[0.1.0]: https://github.com/FerroHEALTH/FerroLICENCE-register/releases/tag/v0.1.0

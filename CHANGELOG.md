@@ -98,6 +98,8 @@ when they change:
   `signers.json` live in the private `FerroHEALTH/FerroLICENCE-register`,
   which the app reads and writes. Updates still come from FerroLICENCE's
   releases.
+- **The manuals moved to the register's private repository**, beside the
+  procedures they describe; the README here is a short introduction.
 - **The Register check runs in the app.** Before it opens a pull request,
   the app checks the change against the register's `main` as it is just
   then; when it refuses, nothing is opened and the sheet says why. The

@@ -43,7 +43,8 @@ where the industry practice it follows is documented. Swift is written as
   no customer data comes here.
 - `docs/`: design, research, threat model, FerroEHR integration contract,
   releasing, the GitHub App's settings (`github-app.md`).
-- `docs/manuals/`: one manual per task, following the app's screens. Keep
+- The manuals (one per task, following the app's screens) are `manuals/` in
+  the private register repository, with the procedures they describe. Keep
   them in step with the code.
 - `scripts/checks/`: the guards CI and the git hooks run. `scripts/ui/`:
   the screenshot tour and its contact sheets. `scripts/release/`: the

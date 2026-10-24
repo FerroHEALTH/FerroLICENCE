@@ -42,7 +42,7 @@ if printf '%s' "$cmd" | grep -qE '(^|[;&|[:space:]])(git[[:space:]]+rm|rm|mv|>|s
 fi
 
 if printf '%s' "$cmd" | grep -qE 'gpg[^;|&]*(--export-secret-keys|--export-secret-subkeys|--delete-secret-keys|--delete-secret-and-public-key)'; then
-  echo "BLOCKED: secret key export or deletion is a manual ceremony step for the owner, never run from a session (docs/manuals/05-lost-key.md)." >&2
+  echo "BLOCKED: secret key export or deletion is a manual ceremony step for the owner, never run from a session (the register repository's manuals/05-lost-key.md)." >&2
   exit 2
 fi
 

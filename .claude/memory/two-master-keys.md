@@ -11,4 +11,4 @@ Retirement of the first key (ceremony of 2026-09-11, certify-only primary 5834C1
 
 **Why:** the owner wanted the key setup "very very simple"; keys that cannot leave a card make rotation and an offline primary unnecessary, and two anchors give redundancy without a backup copy.
 
-**How to apply:** do not reintroduce subkeys, rotation, a software master key or a committed keyring. The YubiKey steps in `docs/manuals/02-yubikey.md` had not been run on a real card when written. GPG Suite was removed from the owner's Mac on 2026-10-07; Homebrew GnuPG 2.5.20 is the only one, and git signs with it (`gpg.program`).
+**How to apply:** do not reintroduce subkeys, rotation, a software master key or a committed keyring. The YubiKey steps in the register repository's `manuals/02-yubikey.md` had not been run on a real card when written. GPG Suite was removed from the owner's Mac on 2026-10-07; Homebrew GnuPG 2.5.20 is the only one, and git signs with it (`gpg.program`).

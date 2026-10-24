@@ -42,7 +42,8 @@ the register's repository after the ceremony (never files, never assets):
   one by primary key packet, and the anchor's own self-signature decides
   whether the key may sign and when it expires.
 - `EMBEDDED_TOKEN: &str`: the `non-commercial` token, signed by a master
-  key (`docs/manuals/03-licences.md` §The free licence every build embeds).
+  key (the register repository's `manuals/03-licences.md`, §The free licence
+  every build embeds).
 
 The verifier accepts a licence that carries exactly one signature, made by
 an anchor itself, and refuses one signed by a subkey. Builds that embed the first key

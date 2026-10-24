@@ -3,7 +3,8 @@
 The commercial licence mechanism for FerroEHR, end to end. This file is the
 design authority for this repository. `research.md` holds the evidence
 behind each decision; `threat-model.md` lists what each attempt against the
-mechanism leaves behind; `manuals/` are the runbooks, one per task;
+mechanism leaves behind; the runbooks, one per task, are `manuals/` in the
+private register repository;
 `ferroehr-integration.md` is the contract for the product side.
 
 ## 1. Goals and non-goals

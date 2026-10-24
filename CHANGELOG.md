@@ -16,6 +16,8 @@ when they change:
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-24
+
 ### Added
 
 - **The FerroLICENCE app for macOS.** A native app (SwiftUI, macOS 27,
@@ -240,5 +242,6 @@ when they change:
   `binomial_tail` fuzz target at n = 65535, k = 65500, p ≈ 1 − 5·10⁻⁷). It
   now sums the small tail and derives the other.
 
-[Unreleased]: https://github.com/FerroHEALTH/FerroLICENCE/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/FerroHEALTH/FerroLICENCE/releases/tag/v0.1.0
+[Unreleased]: https://github.com/FerroHEALTH/FerroLICENCE/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/FerroHEALTH/FerroLICENCE/releases/tag/v0.2.0
+[0.1.0]: https://github.com/FerroHEALTH/FerroLICENCE-register/releases/tag/v0.1.0

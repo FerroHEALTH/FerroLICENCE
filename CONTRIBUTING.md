@@ -14,7 +14,7 @@ manifest. The working discipline is in [`CLAUDE.md`](CLAUDE.md).
 ## Licensing of contributions
 
 FerroLICENCE is source-available under the Business Source License 1.1
-(`LICENSE`, `NOTICE`). By submitting a contribution you:
+(`LICENSE`, `NOTICE`). By opening a pull request you:
 
 1. certify that you wrote it, or otherwise have the right to submit it under
    these terms;
@@ -24,8 +24,5 @@ FerroLICENCE is source-available under the Business Source License 1.1
    sublicense and relicense the contribution as part of the work under any
    terms.
 
-You keep your copyright. There is no separate agreement to sign: the pull
-request template carries a checkbox recording your acceptance of these terms,
-and a pull request from a person does not merge without it (the
-`contribution-licence-guard` check, backed by
-`scripts/checks/contribution-licence.sh`).
+You keep your copyright. There is no separate agreement to sign and no box to
+tick: opening the pull request is your acceptance of these terms.

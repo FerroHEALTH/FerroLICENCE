@@ -58,6 +58,12 @@ where the industry practice it follows is documented. Swift is written as
 
 ## Hard rules
 
+- **Family rules carried in `.claude/memory/` (index `MEMORY.md`).** A removal
+  aid (a named refusal of a removed or renamed config key, flag, env variable,
+  route or format) lives exactly one release and the next release deletes it
+  fully; no legacy support is ever kept (owner hard rule 2026-11-09,
+  `no-compat-shims.md`). Build the proper solution even when it breaks an API
+  and moves the minor version (owner 2026-11-08, `no-half-solutions.md`).
 - **Secret key material never enters this repository.** Not a master key,
   not the retired first key or its subkey, not a revocation certificate,
   not a PIN or passphrase, not a signing certificate or Sparkle's private

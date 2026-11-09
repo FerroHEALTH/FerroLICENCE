@@ -21,4 +21,4 @@ is the design authority.
 ## Licence
 
 Business Source License 1.1, with no additional use grant (`LICENSE`,
-`NOTICE`). Copyright 2026 Cadasto B.V. Security issues: info@cadasto.com.
+`NOTICE`). Copyright 2026 Cadasto B.V. Security issues: security@cadasto.com.

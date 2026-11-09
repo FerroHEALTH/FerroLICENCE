@@ -29,7 +29,7 @@
 - [Release cuts run from the session](release-tag-and-approve-autonomously.md): merge the release PR, sign and push the tag and approve the crates-io gate yourself; owner 2026-09-13 to 2026-11-03
 - [Memory lives in the repo](memory-lives-in-repo.md): every learning is a tracked file here, never a per-user note; owner 2026-09-04
 - [Signed commits and the merge queue](merge-queue-signed.md): main takes only signed commits through the merge queue; no commit-message line starts with "-" or a git header word; 2026-11-09
-- [PR auto-merge](pr-auto-merge.md): arm gh pr merge <n> --auto as its own command the moment a PR opens; no --squash, --delete-branch or --admin; owner 2026-09-04
+- [PR auto-merge](pr-auto-merge.md): arm gh pr merge <n> --auto --squash as its own command the moment a PR opens (no merge queue here); never --admin; owner 2026-09-04
 - [Subagent reports go to a file](subagent-reports-to-file.md): a long agent report is written to the agent's scratch subfolder and read from there; 2026-09-12
 - [Sibling projects](sibling-projects.md): the other family repositories are read-only prior art from here; a change there is made in its own checkout and PR
 - [Fix-first cadence](fix-first-cadence.md): an issue filed while working a unit is fixed before the next unit starts; never weaken a test

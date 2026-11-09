@@ -1,6 +1,6 @@
 ---
 name: pr-auto-merge
-description: Arm every pull request with gh pr merge <n> --auto the moment it opens, as its own command, never --squash, --delete-branch or --admin; watch it until merged (owner 2026-09-04)
+description: Arm every pull request with gh pr merge <n> --auto (here with --squash, no merge queue yet) the moment it opens, as its own command, never --squash, --delete-branch or --admin; watch it until merged (owner 2026-09-04)
 metadata:
   type: feedback
 ---
@@ -8,10 +8,10 @@ metadata:
 After opening a pull request, arm it at once, as its own command:
 
 ```sh
-gh pr merge <n> --auto
+gh pr merge <n> --auto --squash
 ```
 
-Where `main` merges through a merge queue, the queue sets the merge method itself and refuses `--squash` and `--delete-branch`; this repository has no queue yet, and auto-merge merges once the required checks pass.
+Where `main` merges through a merge queue, the queue sets the merge method itself and refuses `--squash` and `--delete-branch`; this repository has no queue yet, so `gh pr merge` needs the method: `--squash` (merge commits are off), and auto-merge merges once the required checks pass.
 
 **Why:** the owner, 2026-09-04: "for PR's do not forget to trigger auto merge okay!! so when the CI is green it will be merged". The `main` ruleset requires the `conclusion` check, so auto-merge is the hand-off.
 

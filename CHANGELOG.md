@@ -16,6 +16,12 @@ when they change:
 
 ## [Unreleased]
 
+### Changed
+
+- `README.md` names `security@cadasto.com` for security issues, in place of
+  `info@cadasto.com`, which stays the address for licensing and other
+  business questions.
+
 ## [0.2.0] - 2026-10-24
 
 ### Added

@@ -126,7 +126,10 @@ where the industry practice it follows is documented. Swift is written as
   `key/`; never use those by hand.
 - **Prose has no AI tells**: no em dashes, no "not X but Y", no triads for
   rhythm, no buzzwords. Comments follow RFC 505/1574: one-sentence summary,
-  blank line, detail; `// TODO(#N):` names an issue; no essays in code.
+  blank line, detail; `// TODO(#N):` names an issue; no essays in code. A
+  comment is written only when the code cannot say it, describes only the
+  code as it is (never the old way or how it got here), and is rewritten
+  whole when the code changes (owner hard rule 2026-11-23).
 
 ## Gates (run before every commit)
 

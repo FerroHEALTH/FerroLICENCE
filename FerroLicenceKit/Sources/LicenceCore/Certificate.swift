@@ -58,9 +58,11 @@ public struct Certificate: Equatable, Sendable {
 
     /// Whether every self-signature and binding verifies under the primary:
     /// direct signatures, user id certifications, subkey bindings, and the
-    /// back-signature of a subkey that may sign.
+    /// back-signature of a subkey that may sign. A version 6 key needs a
+    /// direct key signature (RFC 9580 §5.2.3.10).
     public func bindingsVerify() -> Bool {
         let p = primary.framed
+        if primary.version == 6, !direct.contains(where: { $0.type == 0x1F }) { return false }
         for s in direct where !s.verifies(p, by: primary) { return false }
         for user in users {
             var data = p
@@ -73,7 +75,7 @@ public struct Certificate: Equatable, Sendable {
             let data = p + sub.key.framed
             for s in sub.signatures {
                 guard s.verifies(data, by: primary) else { return false }
-                if let embedded = s.hashed.embedded ?? s.unhashed.embedded, sub.key.ed25519 != nil {
+                if let embedded = s.hashed.embedded ?? s.unhashed.embedded, sub.key.canSign {
                     guard let back = try? SignaturePacket(body: embedded), back.type == 0x19,
                         back.verifies(data, by: sub.key)
                     else { return false }
@@ -83,11 +85,14 @@ public struct Certificate: Equatable, Sendable {
         return true
     }
 
-    /// The primary's newest self-signature that can carry its key flags and
-    /// expiry: a direct-key signature or a user id certification.
+    /// The primary's newest self-signature that carries its key flags and
+    /// expiry: a direct key signature or a user id certification for a
+    /// version 4 key, the direct key signature for a version 6 key (RFC 9580
+    /// §5.2.3.10).
     var newestSelfSignature: SignaturePacket? {
-        (direct + users.flatMap(\.signatures))
-            .filter { [0x1F, 0x10, 0x11, 0x12, 0x13].contains($0.type) }
+        let types: Set<UInt8> = primary.version == 6 ? [0x1F] : [0x1F, 0x10, 0x11, 0x12, 0x13]
+        return (direct + users.flatMap(\.signatures))
+            .filter { types.contains($0.type) }
             // The last of equally new signatures wins, as in the Rust checker.
             .reduce(nil) { best, s in
                 guard let best else { return s }

@@ -60,6 +60,7 @@ func name(of error: VerifyError) -> String {
     case .notSigningCapable: "NotSigningCapable"
     case .noSigningTime: "NoSigningTime"
     case .expiredAtSigning: "ExpiredAtSigning"
+    case .weakDigest: "WeakDigest"
     case .badSignature: "BadSignature"
     case .payload: "Payload"
     case .notYetValid: "NotYetValid"
@@ -100,13 +101,19 @@ func theSwiftCheckerAgreesWithTheRustChecker(_ caseName: String) throws {
     } else {
         tokenURL = Vectors.dir.appending(path: "tokens/\(c.token)")
     }
-    let text = try String(contentsOf: tokenURL, encoding: .utf8)
+    try answer(c, token: try String(contentsOf: tokenURL, encoding: .utf8), anchors: anchors)
+}
+
+/// Run the checker on one vector case and compare its answer, and the
+/// licence it reads, with the case's.
+func answer(_ c: Vectors.Case, token text: String, anchors: [Certificate]) throws {
+    let day = try #require(CivilDate(c.day))
     let result: String
     var licence: Licence?
     do {
         let token = try Token(text)
         do {
-            licence = try verify(token, anchors: anchors, on: CivilDate(c.day)!).licence
+            licence = try verify(token, anchors: anchors, on: day).licence
             result = "ok"
         } catch {
             result = name(of: error)

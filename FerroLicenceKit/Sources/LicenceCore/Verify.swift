@@ -23,6 +23,8 @@ public enum VerifyError: Error, Equatable, Sendable {
     case noSigningTime
     /// Signed after the key had expired.
     case expiredAtSigning(expiredAt: Date, signedAt: Date)
+    /// An ML-DSA-65+Ed25519 signature over a digest under 256 bits (RFC 9980 §5.3.1).
+    case weakDigest(hashAlgorithm: UInt8)
     /// The signature does not match the text.
     case badSignature
     /// The text is not a licence document.
@@ -63,7 +65,8 @@ public func verify(_ token: Token, anchors: [Certificate], on day: CivilDate) th
     if let issuer = signature.issuerFingerprint {
         guard issuer == primary.fingerprint else { throw .unknownSigner }
     } else {
-        guard let keyID = signature.issuerKeyID else { throw .noIssuer }
+        // RFC 9580 §5.2.3.12: a version 6 key is named only by its fingerprint.
+        guard primary.version == 4, let keyID = signature.issuerKeyID else { throw .noIssuer }
         guard keyID == primary.keyID else { throw .unknownSigner }
     }
 
@@ -79,6 +82,7 @@ public func verify(_ token: Token, anchors: [Certificate], on day: CivilDate) th
         if signedAt >= expiry { throw .expiredAtSigning(expiredAt: expiry, signedAt: signedAt) }
     }
 
+    if signature.digestTooShort(for: primary) { throw .weakDigest(hashAlgorithm: signature.hashAlgorithm) }
     guard signature.verifies(Data(token.signedText.utf8), by: primary) else { throw .badSignature }
 
     let licence: Licence
@@ -117,7 +121,7 @@ public enum Check: Int, CaseIterable, Comparable, Sendable {
         case .noIssuer, .unknownSigner: self = .signedByKey
         case .notSigningCapable: self = .maySign
         case .noSigningTime, .expiredAtSigning: self = .beforeExpiry
-        case .badSignature: self = .signatureMatches
+        case .weakDigest, .badSignature: self = .signatureMatches
         case .payload: self = .validDocument
         case .notYetValid, .expired: self = .insideWindow
         }

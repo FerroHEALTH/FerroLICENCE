@@ -19,6 +19,45 @@ before it was removed from this repository. When FerroEHR's checker changes,
 FerroEHR's tests produce a new file and it is copied here; FerroEHR never
 names this repository (CLAUDE.md, Hard rules).
 
+The ID 30 vectors (`Vectors/id30`) go the other way: no product checker
+answered them first, so this repository wrote them from software test keys
+(`writeTheID30Vectors`) with the result each case must get, and FerroEHR's
+checker copies the folder and must give the same answers. They also keep the
+RFC 9980 Appendix A.3 sample key and signature (`Vectors/rfc9980`), which
+both checkers verify as an oracle neither side wrote.
+
+## 1a. ID 30 tokens
+
+A master key may be an RFC 9980 algorithm ID 30 key (ML-DSA-65+Ed25519). The
+token frame and the licence document stay as they are; the key and the
+signature change:
+
+- The key is a version 6 key (RFC 9580 §5.5.2.3, RFC 9980 §3.5). Its
+  material is the 32-octet Ed25519 public key followed by the 1952-octet
+  ML-DSA-65 public key (RFC 9980 §5.3.2.1). Its fingerprint is SHA-256 over
+  `0x9B`, a four-octet length and the body (RFC 9580 §5.5.4.3), 64 hex
+  digits under `keys/`.
+- The anchor carries a direct key signature (type 0x1F), and the signing
+  flag and any expiry are read from its newest one (RFC 9580 §5.2.3.10). An
+  anchor without one fails check 2 (`BrokenBindings`).
+- The licence signature is a version 6 text signature: the salt of the size
+  RFC 9580 Table 23 gives its hash, hashed before the text (§5.2.4), and an
+  Issuer Fingerprint subpacket of version 6 (§5.2.3.35). A version 6
+  signature that names its issuer only by key id fails check 4 (`NoIssuer`).
+  The cleartext frame carries no `Hash:` header (§6.2.2.3).
+- The signature is the 64-octet Ed25519 signature followed by the
+  3309-octet ML-DSA-65 signature (RFC 9980 §5.3.1). Check 7 verifies both
+  over the same digest, PureEdDSA and pure ML-DSA with an empty context
+  (§5.1.1, §5.1.2, §5.2.3); either half failing is `BadSignature`.
+- A digest under 256 bits is refused at check 7 before any cryptography, as
+  `WeakDigest` (RFC 9980 §5.3.1). The signer uses SHA3-256; SHA2-256,
+  SHA2-384, SHA2-512 and SHA3-512 verify too.
+- A version 4 anchor never accepts a version 6 signature, and the reverse.
+
+The two Ed25519 master keys stay in force until a token can hold ML-DSA-65
+(#12). Until then both checkers accept version 4 Ed25519 tokens
+and ID 30 tokens alike.
+
 ## 2. Configuration
 
 ```toml

@@ -16,6 +16,20 @@ when they change:
 
 ## [Unreleased]
 
+### Added
+
+- **Token format:** the checker reads licence tokens signed by an RFC 9980
+  algorithm ID 30 key (ML-DSA-65+Ed25519, version 6 keys and signatures).
+  Both halves must verify, and a digest under 256 bits is refused as
+  `WeakDigest`. Version 4 Ed25519 tokens verify as before. New shared test
+  vectors under `Tests/LicenceCoreTests/Vectors/id30` and the RFC 9980
+  Appendix A.3 sample under `Vectors/rfc9980`.
+- ID 30 signing through `ferrohealth-sop`, ready for the key ceremony: the
+  kit frames a detached text signature as the cleartext licence file, and
+  the interop tests run issue, renewal, revocation and every key change with
+  software ID 30 keys. No software key signs a real licence; the app keeps
+  signing on the Ed25519 YubiKeys until a token holds ML-DSA-65.
+
 ### Changed
 
 - `README.md` names `security@cadasto.com` for security issues, in place of

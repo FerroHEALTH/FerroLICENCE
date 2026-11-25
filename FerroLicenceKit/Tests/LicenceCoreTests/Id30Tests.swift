@@ -151,3 +151,24 @@ func theSwiftCheckerAnswersTheID30Vectors(_ c: Vectors.Case) throws {
         #expect(refusals.contains(expected), "\(expected)")
     }
 }
+
+/// What the ID 30 signer does: a detached text signature over the licence
+/// text, framed by the kit as a cleartext-signed licence file.
+@Test func aDetachedTextSignatureFramedAsCleartextVerifies() throws {
+    let f = try PQFixture(seed: 1)
+    let cert = try f.certificate(uid: "Fixture <f@example.invalid>")
+    let signature = Armor.encode(try f.documentSignature(Fixture.signedText, at: f.created), kind: "PGP SIGNATURE")
+    let file = Token.cleartext(
+        String(Fixture.licence.canonicalJSON.dropLast()), signature: signature,
+        certificate: Armor.encode(cert, kind: "PGP PUBLIC KEY BLOCK"))
+    #expect(file.hasPrefix("-----BEGIN PGP SIGNED MESSAGE-----\n\n{\n"))
+    #expect(!file.contains("Hash:"))
+    #expect(try check(file, anchors: [cert]).licence == Fixture.licence)
+}
+
+@Test func theCleartextFrameDashEscapes() throws {
+    let file = Token.cleartext("- a\n-b\nc", signature: "-----BEGIN PGP SIGNATURE-----\n", certificate: "")
+    #expect(file.contains("\n\n- - a\n- -b\nc\n-----BEGIN PGP SIGNATURE-----"))
+    let (text, _) = try #require(Token.split(file))
+    #expect(text == "- a\r\n-b\r\nc")
+}

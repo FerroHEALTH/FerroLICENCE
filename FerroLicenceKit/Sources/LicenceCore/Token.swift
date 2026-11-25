@@ -70,6 +70,17 @@ public struct Token: Sendable {
         return (text.joined(separator: "\r\n"), lines[sig...].joined(separator: "\n"))
     }
 
+    /// A licence file from `text`, its detached text `signature` and the
+    /// signer's `certificate`: the cleartext frame of RFC 9580 §7.1 with no
+    /// Hash header (§6.2.2.3), the text dash-escaped (§7.2). `text` is what
+    /// the signature covers, without a final line break.
+    public static func cleartext(_ text: String, signature: String, certificate: String) -> String {
+        let escaped = text.split(separator: "\n", omittingEmptySubsequences: false)
+            .map { $0.hasPrefix("-") ? "- \($0)" : String($0) }
+            .joined(separator: "\n")
+        return assemble(signed: "\(messageBegin)\n\n\(escaped)\n\(signature)", certificate: certificate)
+    }
+
     /// Put a cleartext signature and a certificate together as one licence
     /// file, one newline between the blocks.
     public static func assemble(signed: String, certificate: String) -> String {

@@ -161,6 +161,16 @@
         }
       }
     },
+    "No valid signature." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen geldige handtekening."
+          }
+        }
+      }
+    },
     "One YubiKey 5 is plugged in, with no key on it yet." : {
       "localizations" : {
         "nl" : {
@@ -217,6 +227,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "De pincode is geblokkeerd na drie verkeerde pogingen. Deblokkeer hem met de beheerderspincode: voer in Terminal gpg --card-edit uit, dan admin, passwd, en kies 2."
+          }
+        }
+      }
+    },
+    "The hardware key refused to sign." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De hardwaresleutel weigerde te ondertekenen."
+          }
+        }
+      }
+    },
+    "The hardware key was not found. Plug it in." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De hardwaresleutel is niet gevonden. Steek hem in."
+          }
+        }
+      }
+    },
+    "The key is not an ML-DSA-65+Ed25519 key (RFC 9980 algorithm 30)." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De sleutel is geen ML-DSA-65+Ed25519-sleutel (RFC 9980, algoritme 30)."
+          }
+        }
+      }
+    },
+    "The key may not sign." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De sleutel mag niet ondertekenen."
           }
         }
       }
@@ -323,6 +373,32 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "YubiKey %@ bevat nog geen sleutel. Stel hem in onder Sleutels."
+          }
+        }
+      }
+    },
+    "ferrohealth-sop %@ failed: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "ferrohealth-sop %1$@ failed: %2$@"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ferrohealth-sop %1$@ is mislukt: %2$@"
+          }
+        }
+      }
+    },
+    "ferrohealth-sop is not installed." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ferrohealth-sop is niet geïnstalleerd."
           }
         }
       }

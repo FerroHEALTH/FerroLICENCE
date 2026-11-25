@@ -24,6 +24,11 @@ when they change:
   `WeakDigest`. Version 4 Ed25519 tokens verify as before. New shared test
   vectors under `Tests/LicenceCoreTests/Vectors/id30` and the RFC 9980
   Appendix A.3 sample under `Vectors/rfc9980`.
+- ID 30 signing through `ferrohealth-sop`, ready for the key ceremony: the
+  kit frames a detached text signature as the cleartext licence file, and
+  the interop tests run issue, renewal, revocation and every key change with
+  software ID 30 keys. No software key signs a real licence; the app keeps
+  signing on the Ed25519 YubiKeys until a token holds ML-DSA-65.
 
 ### Changed
 

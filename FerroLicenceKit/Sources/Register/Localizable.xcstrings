@@ -103,16 +103,6 @@
         }
       }
     },
-    "GnuPG returned something that is not a licence file." : {
-      "localizations" : {
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GnuPG gaf iets terug dat geen licentiebestand is."
-          }
-        }
-      }
-    },
     "Handed Over" : {
       "localizations" : {
         "nl" : {
@@ -445,6 +435,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "De ondertekende licentie haalt de controle “%@” van FerroEHR niet. Er is niets vastgelegd."
+          }
+        }
+      }
+    },
+    "The signer returned something that is not a licence file." : {
+      "localizations" : {
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De ondertekenaar gaf iets terug dat geen licentiebestand is."
           }
         }
       }

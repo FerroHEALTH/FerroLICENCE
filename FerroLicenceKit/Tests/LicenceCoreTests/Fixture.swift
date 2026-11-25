@@ -54,10 +54,11 @@ struct Fixture {
         return head + be16(unhashed.count) + unhashed + digest.prefix(2) + mpi(sig.prefix(32)) + mpi(sig.suffix(32))
     }
 
-    /// A licence file: `licence` signed with `signatures`, bundling `certificate`.
-    static func token(_ licence: Licence, signatures: Data, certificate: Data) -> String {
+    /// A licence file: `licence` signed with `signatures`, bundling
+    /// `certificate`. A version 6 signature carries no Hash header (RFC 9580 §6.2.2.3).
+    static func token(_ licence: Licence, signatures: Data, certificate: Data, hashHeader: Bool = true) -> String {
         let text = licence.canonicalJSON.dropLast()  // the final line break belongs to the frame
-        return "-----BEGIN PGP SIGNED MESSAGE-----\nHash: SHA512\n\n\(text)\n"
+        return "-----BEGIN PGP SIGNED MESSAGE-----\n\(hashHeader ? "Hash: SHA512\n" : "")\n\(text)\n"
             + Armor.encode(signatures, kind: "PGP SIGNATURE")
             + Armor.encode(certificate, kind: "PGP PUBLIC KEY BLOCK")
     }

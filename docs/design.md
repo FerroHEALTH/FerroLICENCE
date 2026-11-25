@@ -150,6 +150,13 @@ each step a typed refusal:
 Anchors are the certificates parsed from `keys/*.asc`. The product embeds
 the same files and parses them at boot.
 
+The checks read version 4 Ed25519 keys and version 6 RFC 9980 algorithm ID 30
+keys (ML-DSA-65+Ed25519). For ID 30, check 2 also needs a direct key
+signature, check 5 and check 6 read that signature, check 4 needs the
+version 6 Issuer Fingerprint, and check 7 refuses a digest under 256 bits
+(`WeakDigest`, RFC 9980 §5.3.1) and then verifies both halves over the same
+digest (RFC 9980 §5.2.3). `ferroehr-integration.md` §1a is the contract.
+
 ## 6. Keys
 
 Two master keys, one per owner of the licensor (Cadasto B.V.), each
@@ -189,6 +196,14 @@ The first key. The ceremony of 2026-09-11 made a certify-only primary
 retired on 2026-10-07: the embedded non-commercial token was re-minted with
 a master key, the certificate moved to `keys/retired/`, and the keyring was
 destroyed the same day.
+
+Post-quantum keys. FerroEHR moves its own signatures to RFC 9980 algorithm
+ID 30, and the licence chain follows once a hardware token can hold
+ML-DSA-65: the owners keep the two Ed25519 master keys until then and never
+take a software master key (2026-11-25, #12). The checks, the vectors and
+the signing flows for ID 30 are built and tested with software test keys, so
+the ceremony is one change. The YubiKey 5 at firmware 5.8 offers no ML-DSA
+in its OpenPGP application (`research.md` §8).
 
 Why OpenPGP rather than a bare Ed25519 signature over JSON: the product
 already carries rPGP for version signing, so the envelope costs no new
@@ -400,6 +415,8 @@ its hash.
 |---|---|---|---|
 | Signature envelope | OpenPGP (GnuPG signs; FerroEHR verifies with rPGP, this repository with `LicenceCore`) | bare Ed25519 + JSON, JWT, PASETO, Keygen-style `data.sig` | rPGP already in the product; expiry and certificate transport come free; GnuPG holds keys and drives hardware tokens; two implementations cross-check |
 | Signing algorithm | Ed25519 (v4 keys, EdDSA legacy codepoint) | RSA, ECDSA P-256, v6 keys | industry recommendation (Keygen, license-guard-rs); v4 keeps GnuPG compatibility everywhere |
+| Post-quantum signing | RFC 9980 algorithm ID 30 (ML-DSA-65+Ed25519, v6 keys) once a hardware token holds ML-DSA-65; until then the Ed25519 master keys stay (owners, 2026-11-25) | a software ML-DSA master key; a split composite with the ML-DSA half in the Mac's Secure Enclave and the Ed25519 half on the YubiKey; SLH-DSA (IDs 32 to 34) | ID 30 is the one post-quantum signature RFC 9980 makes mandatory and the one FerroEHR verifies; a split key would bind each master key to one Mac as well as one YubiKey (#12) |
+| ID 30 verification in the kit | CryptoKit `MLDSA65` and `Curve25519.Signing`, both halves over one digest, the digest floor first | a library or the signer's own `verify` | the kit already verifies with CryptoKit; a checker that is not the signer keeps the two-implementation proof |
 | Who signs | two master keys, one per owner, each signing directly (2026-10-07) | a certify-only primary with one signing subkey per signer (2026-09-11 to 2026-10-07); a single primary | two people issue; a key that cannot leave its card needs neither an offline primary nor rotation; two anchors give redundancy without a backup copy |
 | Team signing | each owner holds their own master key on their own YubiKey | the ceremony keyring committed to the private repository; one shared key | per-person attribution in the register; a committed keyring hands the key to every clone, forever, and cannot be withdrawn (2026-10-01) |
 | Hardware for master keys | YubiKey 5 (OpenPGP, Ed25519), key generated on the card | macOS Secure Enclave; generating in software and importing | the Secure Enclave holds P-256 only and GnuPG cannot use it; a key generated on the card has never existed anywhere else (2026-10-07) |

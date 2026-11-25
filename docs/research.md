@@ -187,3 +187,47 @@ read): <https://www.mend.io/blog/eu-cyber-resilience-act-compliance-guide/>.
 
 **Taken:** the product-side module is plainly named and its config key
 documented; nothing is disguised (design §10, `ferroehr-integration.md` §6).
+
+## 8. Post-quantum master keys (2026-11-25)
+
+**The algorithm.** RFC 9980 registers ML-DSA-65+Ed25519 as public-key
+algorithm ID 30, the one post-quantum signature every implementation MUST
+support (§2.1), for version 6 keys and signatures only (§3.5, §5.3). The
+signature is two independent signatures over the same RFC 9580 digest:
+PureEdDSA with an empty context (§5.1.1) and the hedged, pure ML-DSA with an
+empty context (§5.1.2); both must verify (§3.2, §5.2.3), and a digest under
+256 bits is refused (§5.3.1). The two component keys are generated
+independently (§5.2.1). FerroEHR adopts ID 30 for its own signatures and
+verifies licence tokens with it (its post-quantum issue, citing NIST IR 8547
+§4.1.1 and the NIS Cooperation Group roadmap v1.1 §4).
+Source: <https://www.rfc-editor.org/rfc/rfc9980> (read first-hand), with
+RFC 9580 §5.2.3, §5.2.4, §5.5.2.3 and §5.5.4.3 for the version 6 packets
+<https://www.rfc-editor.org/rfc/rfc9580>.
+
+**The token.** Read on the owner's YubiKey with `ykman info`,
+`ykman openpgp info` and `gpg --card-status`, nothing written: a YubiKey 5C
+NFC, firmware 5.8.0, OpenPGP application 3.4, key attributes ed25519,
+cv25519, ed25519. Yubico's OpenPGP page lists RSA 2048 to 4096, the NIST,
+secp256k1 and Brainpool curves, ed25519 and x25519, and no post-quantum
+algorithm <https://docs.yubico.com/hardware/yubikey/yk-tech-manual/yk5-apps-openpgp.html>.
+The 5.8 firmware page names post-quantum cryptography only for the FIDO
+`attestationFormats` field
+<https://docs.yubico.com/hardware/yubikey/yk-tech-manual/yk5-firmware-5.8.html>.
+Yubico's PQC beta is a next-generation key with ML-DSA and ML-KEM for FIDO2
+and PIV, open from 2026-11-03 "for testing and evaluation, not production
+use", with no OpenPGP <https://www.yubico.com/pqc-beta-program>.
+
+**The alternative.** macOS 26 added ML-DSA-65 to CryptoKit, in software
+(`MLDSA65`) and in the Secure Enclave (`SecureEnclave.MLDSA65`, not
+exportable), with a sample of hybrid ML-DSA and elliptic-curve signing
+(Apple, "Enhancing your app's privacy and security with quantum-secure
+workflows", CryptoKit documentation). The software key signs 3309-octet
+signatures that differ on every call over the same input, the hedged
+variant RFC 9980 §9.3 asks for (checked on 2026-11-25 with a throwaway key).
+
+**Taken:** ID 30 keys and signatures, verified in the kit with CryptoKit;
+the master keys move once a token holds ML-DSA-65, and stay Ed25519 until
+then (#12). **Departed from:** a split composite (Ed25519 on the YubiKey,
+ML-DSA in the Secure Enclave), which RFC 9980 §5.2.1 allows but which binds
+each master key to one Mac as well; a software ML-DSA key, which the owners
+refuse.

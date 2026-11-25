@@ -60,6 +60,7 @@ func name(of error: VerifyError) -> String {
     case .notSigningCapable: "NotSigningCapable"
     case .noSigningTime: "NoSigningTime"
     case .expiredAtSigning: "ExpiredAtSigning"
+    case .weakDigest: "WeakDigest"
     case .badSignature: "BadSignature"
     case .payload: "Payload"
     case .notYetValid: "NotYetValid"

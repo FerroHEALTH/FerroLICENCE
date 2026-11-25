@@ -1,0 +1,314 @@
+{
+  "cases" : [
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_ok_a",
+      "result" : "ok",
+      "token" : "ok_a.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2027-10-31",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a9",
+        "licensee" : "Ünïcode \"Quoted\" / Slash & Co. — ✓",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_ok_b_sha512",
+      "result" : "ok",
+      "token" : "ok_b_sha512.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_untrusted",
+      "result" : "UntrustedPrimary",
+      "token" : "untrusted.asc"
+    },
+    {
+      "anchors" : [
+        "N.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_no_direct_key",
+      "result" : "BrokenBindings",
+      "token" : "no_direct_key.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_two_signatures",
+      "result" : "ExtraSignatures",
+      "token" : "two_signatures.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_binary_signature",
+      "result" : "NotTextSignature",
+      "token" : "binary_signature.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_key_id_only",
+      "result" : "NoIssuer",
+      "token" : "key_id_only.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_unknown_signer",
+      "result" : "UnknownSigner",
+      "token" : "unknown_signer.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc",
+        "C.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_not_signing",
+      "result" : "NotSigningCapable",
+      "token" : "not_signing.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc",
+        "D.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_expired_at_signing",
+      "result" : "ExpiredAtSigning",
+      "token" : "expired_at_signing.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_weak_digest",
+      "result" : "WeakDigest",
+      "token" : "weak_digest.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital BV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_tampered",
+      "result" : "BadSignature",
+      "token" : "tampered.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_ed25519_half_broken",
+      "result" : "BadSignature",
+      "token" : "ed25519_half_broken.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_mldsa_half_broken",
+      "result" : "BadSignature",
+      "token" : "mldsa_half_broken.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "name" : "id30_unknown_field",
+      "result" : "Payload",
+      "token" : "unknown_field.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-10-31",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_not_yet_valid",
+      "result" : "NotYetValid",
+      "token" : "ok_a.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2027-11-01",
+      "licence" : {
+        "issued" : "2026-10-24",
+        "licence_id" : "019a1171-8f20-7b3e-a5c4-2e9d7f60b1a8",
+        "licensee" : "Example Hospital NV",
+        "not_after" : "2027-10-31",
+        "not_before" : "2026-11-01",
+        "use" : "commercial"
+      },
+      "name" : "id30_expired",
+      "result" : "Expired",
+      "token" : "ok_a.asc"
+    },
+    {
+      "anchors" : [
+        "A.asc",
+        "B.asc"
+      ],
+      "day" : "2026-11-01",
+      "name" : "id30_no_certificate",
+      "result" : "Token:MissingCertificate",
+      "token" : "no_certificate.asc"
+    }
+  ],
+  "generated_by" : "FerroLicenceKit writeTheID30Vectors (CryptoKit, RFC 9980 algorithm ID 30), 2026-11-25"
+}

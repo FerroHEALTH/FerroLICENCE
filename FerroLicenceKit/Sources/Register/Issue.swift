@@ -88,7 +88,7 @@ public enum RecordingError: Error, Equatable, Sendable, CustomStringConvertible 
 
     public var message: LocalizedStringResource {
         switch self {
-        case .notALicenceFile: LocalizedStringResource("GnuPG returned something that is not a licence file.", bundle: #bundle)
+        case .notALicenceFile: LocalizedStringResource("The signer returned something that is not a licence file.", bundle: #bundle)
         case .refused(let e):
             LocalizedStringResource("The signed licence fails FerroEHR's check “\(Check(e).title)”. Nothing was recorded.", bundle: #bundle)
         case .different: LocalizedStringResource("The signed licence differs from the draft. Nothing was recorded.", bundle: #bundle)

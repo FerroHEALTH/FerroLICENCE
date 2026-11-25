@@ -28,7 +28,8 @@ where the industry practice it follows is documented. Swift is written as
   checks FerroEHR runs, the stamp and the attestation statistics, tied to
   FerroEHR's checker by `Tests/LicenceCoreTests/Vectors`. `Register`: the
   register in memory, drafts, renewals, revocations, key changes and the
-  Register check. `Signing`: every GnuPG call and the YubiKey setup steps.
+  Register check. `Signing`: every GnuPG call and the YubiKey setup steps, and
+  the `ferrohealth-sop` calls that make RFC 9980 ID 30 signatures (`SOP.swift`).
   `GitHubKit`: device-flow sign-in, sync, the recorder (branch, pull request,
   check, merge) and releases. `register-check`: the command CI runs.
 - The register is not here. `FerroHEALTH/FerroLICENCE-register` (private)

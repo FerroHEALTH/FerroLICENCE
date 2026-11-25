@@ -205,6 +205,17 @@ the signing flows for ID 30 are built and tested with software test keys, so
 the ceremony is one change. The YubiKey 5 at firmware 5.8 offers no ML-DSA
 in its OpenPGP application (`research.md` §8).
 
+ID 30 signing goes through `ferrohealth-sop`, the family's signer, a
+Stateless OpenPGP command line (draft-dkg-openpgp-stateless-cli-16) over
+rPGP's packets and aws-lc-rs, which GnuPG cannot replace because it has no
+ML-DSA. A master key is an `ID30Signer`: it gives its certificate and a
+detached text signature (`sign --as=text`), and the kit frames the two as
+the cleartext licence file (`Token.cleartext`, RFC 9580 §7) and verifies it
+with its own checks before anything is recorded. The only conformance today
+is the software key of the tests, compiled into debug builds alone; the
+hardware key is the conformance the ceremony adds, through the same program
+(its §11.10 covers hardware-backed keys).
+
 Why OpenPGP rather than a bare Ed25519 signature over JSON: the product
 already carries rPGP for version signing, so the envelope costs no new
 dependency; OpenPGP gives the certificate transport for free; and GnuPG
@@ -417,6 +428,7 @@ its hash.
 | Signing algorithm | Ed25519 (v4 keys, EdDSA legacy codepoint) | RSA, ECDSA P-256, v6 keys | industry recommendation (Keygen, license-guard-rs); v4 keeps GnuPG compatibility everywhere |
 | Post-quantum signing | RFC 9980 algorithm ID 30 (ML-DSA-65+Ed25519, v6 keys) once a hardware token holds ML-DSA-65; until then the Ed25519 master keys stay (owners, 2026-11-25) | a software ML-DSA master key; a split composite with the ML-DSA half in the Mac's Secure Enclave and the Ed25519 half on the YubiKey; SLH-DSA (IDs 32 to 34) | ID 30 is the one post-quantum signature RFC 9980 makes mandatory and the one FerroEHR verifies; a split key would bind each master key to one Mac as well as one YubiKey (#12) |
 | ID 30 verification in the kit | CryptoKit `MLDSA65` and `Curve25519.Signing`, both halves over one digest, the digest floor first | a library or the signer's own `verify` | the kit already verifies with CryptoKit; a checker that is not the signer keeps the two-implementation proof |
+| ID 30 signing | `ferrohealth-sop`, the family's Stateless OpenPGP signer (rPGP packets, aws-lc-rs), called like GnuPG with its arguments visible (2026-11-25) | GnuPG; Sequoia (LGPL and an OpenSSL 3.5 dependency); signing in Swift | GnuPG has no ML-DSA; one signer for the family keeps FerroEHR and this app on the same code; key operations stay outside the app's own code |
 | Who signs | two master keys, one per owner, each signing directly (2026-10-07) | a certify-only primary with one signing subkey per signer (2026-09-11 to 2026-10-07); a single primary | two people issue; a key that cannot leave its card needs neither an offline primary nor rotation; two anchors give redundancy without a backup copy |
 | Team signing | each owner holds their own master key on their own YubiKey | the ceremony keyring committed to the private repository; one shared key | per-person attribution in the register; a committed keyring hands the key to every clone, forever, and cannot be withdrawn (2026-10-01) |
 | Hardware for master keys | YubiKey 5 (OpenPGP, Ed25519), key generated on the card | macOS Secure Enclave; generating in software and importing | the Secure Enclave holds P-256 only and GnuPG cannot use it; a key generated on the card has never existed anywhere else (2026-10-07) |

@@ -92,6 +92,15 @@ private func check(_ token: String, anchors: [Data]) throws -> Verified {
     #expect(throws: VerifyError.badSignature) { try check(token, anchors: [cert]) }
 }
 
+/// RFC 9580 §9.5: a recent signature that depends on SHA-1 is not validated.
+@Test func aSHA1SignatureIsRefused() throws {
+    let f = Fixture()
+    let cert = f.certificate()
+    let token = Fixture.token(
+        Fixture.licence, signatures: f.textSignature(Fixture.signedText, at: f.created, sha1: true), certificate: cert)
+    #expect(throws: VerifyError.badSignature) { try check(token, anchors: [cert]) }
+}
+
 @Test func everyRefusalMapsToItsCheck() {
     #expect(Check(.noSignature) == .oneSignature)
     #expect(Check(.unknownSigner) == .signedByKey)

@@ -32,6 +32,10 @@ when they change:
 
 ### Changed
 
+- **Token format:** the checker no longer validates a signature whose
+  digest is SHA-1, as RFC 9580 §9.5 requires for recent signatures. No
+  issued licence uses SHA-1; a version 4 fingerprint is still SHA-1, as
+  RFC 9580 §5.5.4.2 defines it.
 - `README.md` names `security@cadasto.com` for security issues, in place of
   `info@cadasto.com`, which stays the address for licensing and other
   business questions.

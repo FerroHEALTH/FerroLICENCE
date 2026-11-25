@@ -37,19 +37,19 @@ struct Fixture {
     }
 
     /// A text signature over `text` (already `\r\n`-joined).
-    func textSignature(_ text: String, at: Date?, issuerFingerprint: Bool = true, issuerKeyID: Bool = true) -> Data {
+    func textSignature(_ text: String, at: Date?, issuerFingerprint: Bool = true, issuerKeyID: Bool = true, sha1: Bool = false) -> Data {
         var hashed = Data()
         if let at { hashed += sub(2, be32(UInt32(at.timeIntervalSince1970))) }
         if issuerFingerprint { hashed += sub(33, Data([4]) + packet.fingerprint) }
         let unhashed = issuerKeyID ? sub(16, packet.keyID) : Data()
-        return frame(2, signature(type: 0x01, hashed: hashed, unhashed: unhashed, over: Data(text.utf8)))
+        return frame(2, signature(type: 0x01, hashed: hashed, unhashed: unhashed, over: Data(text.utf8), sha1: sha1))
     }
 
-    func signature(type: UInt8, hashed: Data, unhashed: Data, over data: Data) -> Data {
-        var head = Data([4, type, 22, 10])
+    func signature(type: UInt8, hashed: Data, unhashed: Data, over data: Data, sha1: Bool = false) -> Data {
+        var head = Data([4, type, 22, sha1 ? 2 : 10])
         head += be16(hashed.count) + hashed
         let trailer = head + Data([4, 0xFF]) + be32(UInt32(head.count))
-        let digest = Data(SHA512.hash(data: data + trailer))
+        let digest = sha1 ? Data(Insecure.SHA1.hash(data: data + trailer)) : Data(SHA512.hash(data: data + trailer))
         let sig = try! key.signature(for: digest)
         return head + be16(unhashed.count) + unhashed + digest.prefix(2) + mpi(sig.prefix(32)) + mpi(sig.suffix(32))
     }

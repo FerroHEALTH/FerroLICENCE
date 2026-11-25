@@ -137,7 +137,7 @@ where the industry practice it follows is documented. Swift is written as
 ```bash
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer   # xcode-select points at the CLT here
 swift format lint --strict --recursive FerroLicenceKit FerroLICENCE scripts/ui/contact-sheet.swift scripts/release/verify-update.swift scripts/release/dmg-background.swift
-FERROLICENCE_REQUIRE_GPG=1 swift test --package-path FerroLicenceKit     # includes the GnuPG interop tests
+FERROLICENCE_REQUIRE_GPG=1 FERROLICENCE_REQUIRE_SOP=1 swift test --package-path FerroLicenceKit   # GnuPG and ferrohealth-sop interop
 xcodebuild test -project FerroLICENCE/FerroLICENCE.xcodeproj -scheme FerroLICENCE -destination 'platform=macOS,arch=arm64'
 bash scripts/checks/no-secret-material.sh
 actionlint .github/workflows/*.yml
@@ -148,7 +148,10 @@ are the proof that GnuPG-signed tokens pass the checker and the Register
 check. They use a throwaway GnuPG home under `/tmp` and a software key, and
 never touch the developer's keyring; they also prove a software key never
 becomes a `SigningKey`. CI sets `FERROLICENCE_REQUIRE_GPG=1` so they can never
-silently skip there.
+silently skip there. The ID 30 interop tests (`SOPInteropTests.swift`) do the
+same for `ferrohealth-sop` with `FERROLICENCE_REQUIRE_SOP=1`; CI builds it
+from FerroSYS at a pinned commit, and `FERROLICENCE_SOP` names a build
+outside `/opt/homebrew/bin`, `/usr/local/bin` and `~/.cargo/bin`.
 
 **Every UI change is looked at.** `bash scripts/ui/screenshots.sh [screen…]`
 opens the debug app in fixture mode (no network, no YubiKey) once per screen,

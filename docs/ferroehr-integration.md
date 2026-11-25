@@ -22,9 +22,12 @@ names this repository (CLAUDE.md, Hard rules).
 The ID 30 vectors (`Vectors/id30`) go the other way: no product checker
 answered them first, so this repository wrote them from software test keys
 (`writeTheID30Vectors`) with the result each case must get, and FerroEHR's
-checker copies the folder and must give the same answers. They also keep the
-RFC 9980 Appendix A.3 sample key and signature (`Vectors/rfc9980`), which
-both checkers verify as an oracle neither side wrote.
+checker copies the folder and must give the same answers. `ferrohealth-sop`,
+the family's ID 30 signer, verifies them too (`SOPInteropTests`). The folder
+`Vectors/rfc9980` keeps the RFC 9980 Appendix A.3 sample key and its
+detached signature, an oracle neither side wrote. That signature is a
+version 6 text signature (type 0x01) over `Testing\n`, so it is hashed as
+`Testing\r\n` (RFC 9580 §5.2.4); `Vectors/rfc9980/vectors.json` says so.
 
 ## 1a. ID 30 tokens
 

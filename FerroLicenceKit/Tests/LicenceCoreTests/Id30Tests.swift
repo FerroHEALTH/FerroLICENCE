@@ -13,24 +13,41 @@ private func rfc9980(_ name: String) throws -> String {
     try String(contentsOf: Vectors.dir.appending(path: "rfc9980/\(name)"), encoding: .utf8)
 }
 
+/// `Vectors/rfc9980/vectors.json`: what RFC 9980 Appendix A.3 says about its
+/// sample certificate and its detached signature.
+struct RFC9980Sample: Decodable {
+    let certificate: String
+    let primary_fingerprint: String
+    let subkey_fingerprint: String
+    let signature: String
+    let signature_version: UInt8
+    let signature_type: UInt8
+    let hash_algorithm: UInt8
+    let message: String
+    let hashed_text: String
+}
+
 /// RFC 9980 Appendix A.3: the sample ML-DSA-65+Ed25519 certificate and its
-/// detached signature over "Testing\n", an oracle written by others.
+/// detached text signature (type 0x01) over "Testing\n", an oracle written
+/// by others. A text signature hashes the line ending as CR LF (RFC 9580 §5.2.4).
 @Test func theRFC9980SampleKeyAndSignatureVerify() throws {
-    let cert = try Certificate(armored: try rfc9980("a3-public.asc"))
+    let sample = try JSONDecoder().decode(RFC9980Sample.self, from: Data(contentsOf: Vectors.dir.appending(path: "rfc9980/vectors.json")))
+    let cert = try Certificate(armored: try rfc9980(sample.certificate))
     #expect(cert.primary.version == 6)
     #expect(cert.primary.algorithm == 30)
-    #expect(cert.primary.fingerprint.hexLower == "a3e2e14b6a493ff930fb27321f125e9a6880338be9fb7da3ae065ea65793242f")
-    #expect(cert.subkeys.first?.key.fingerprint.hexLower == "7dae8fbce23022607167af72a002e774e0ca379a2d7ae072384e1e8fde3265e4")
+    #expect(cert.primary.fingerprint.hexLower == sample.primary_fingerprint)
+    #expect(cert.subkeys.first?.key.fingerprint.hexLower == sample.subkey_fingerprint)
     #expect(cert.bindingsVerify())
 
-    let packets = try Packet.all(in: try Armor.decode(try rfc9980("a3-detached.asc"), kind: "PGP SIGNATURE"))
+    let packets = try Packet.all(in: try Armor.decode(try rfc9980(sample.signature), kind: "PGP SIGNATURE"))
     let signature = try #require(packets.first.map { try SignaturePacket(body: $0.body) })
-    #expect(signature.version == 6)
+    #expect(signature.version == sample.signature_version)
+    #expect(signature.type == sample.signature_type)
+    #expect(signature.hashAlgorithm == sample.hash_algorithm)
     #expect(signature.issuerFingerprint == cert.primary.fingerprint)
-    // A text signature: the line ending is hashed as CR LF (RFC 9580 §5.2.4).
-    #expect(signature.type == 0x01)
-    #expect(signature.verifies(Data("Testing\r\n".utf8), by: cert.primary))
-    #expect(!signature.verifies(Data("Testing\n".utf8), by: cert.primary))
+    #expect(sample.message.replacingOccurrences(of: "\n", with: "\r\n") == sample.hashed_text)
+    #expect(signature.verifies(Data(sample.hashed_text.utf8), by: cert.primary))
+    #expect(!signature.verifies(Data(sample.message.utf8), by: cert.primary))
 }
 
 @Test func anID30LicenceVerifies() throws {

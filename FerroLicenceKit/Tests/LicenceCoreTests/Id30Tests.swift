@@ -34,24 +34,24 @@ private func rfc9980(_ name: String) throws -> String {
 }
 
 @Test func anID30LicenceVerifies() throws {
-    let f = PQFixture(seed: 1)
-    let cert = f.certificate(uid: "Fixture <f@example.invalid>")
+    let f = try PQFixture(seed: 1)
+    let cert = try f.certificate(uid: "Fixture <f@example.invalid>")
     for hash: UInt8 in [8, 9, 10, 12, 14] {
         let token = Fixture.token(
-            Fixture.licence, signatures: f.documentSignature(Fixture.signedText, at: f.created.addingTimeInterval(60), hash: hash),
+            Fixture.licence, signatures: try f.documentSignature(Fixture.signedText, at: f.created.addingTimeInterval(60), hash: hash),
             certificate: cert, hashHeader: false)
         let verified = try check(token, anchors: [cert])
         #expect(verified.licence == Fixture.licence)
-        #expect(verified.signer == f.packet.fingerprintHex)
+        #expect(try verified.signer == f.packet.fingerprintHex)
         #expect(verified.signer.count == 64)
     }
 }
 
 @Test func aDigestUnder256BitsIsRefused() throws {
-    let f = PQFixture(seed: 1)
-    let cert = f.certificate(uid: "Fixture <f@example.invalid>")
+    let f = try PQFixture(seed: 1)
+    let cert = try f.certificate(uid: "Fixture <f@example.invalid>")
     let token = Fixture.token(
-        Fixture.licence, signatures: f.documentSignature(Fixture.signedText, at: f.created, hash: 11), certificate: cert,
+        Fixture.licence, signatures: try f.documentSignature(Fixture.signedText, at: f.created, hash: 11), certificate: cert,
         hashHeader: false)
     #expect(throws: VerifyError.weakDigest(hashAlgorithm: 11)) { try check(token, anchors: [cert]) }
     #expect(Check(.weakDigest(hashAlgorithm: 11)) == .signatureMatches)
@@ -59,43 +59,44 @@ private func rfc9980(_ name: String) throws -> String {
 
 @Test(arguments: [(true, false), (false, true)])
 func bothHalvesMustVerify(_ breakEd25519: Bool, _ breakMLDSA: Bool) throws {
-    let f = PQFixture(seed: 1)
-    let cert = f.certificate(uid: "Fixture <f@example.invalid>")
+    let f = try PQFixture(seed: 1)
+    let cert = try f.certificate(uid: "Fixture <f@example.invalid>")
     let token = Fixture.token(
         Fixture.licence,
-        signatures: f.documentSignature(Fixture.signedText, at: f.created, breakEd25519: breakEd25519, breakMLDSA: breakMLDSA),
+        signatures: try f.documentSignature(Fixture.signedText, at: f.created, breakEd25519: breakEd25519, breakMLDSA: breakMLDSA),
         certificate: cert, hashHeader: false)
     #expect(throws: VerifyError.badSignature) { try check(token, anchors: [cert]) }
 }
 
 @Test func aVersion6KeyWithoutADirectKeySignatureIsRefused() throws {
-    let f = PQFixture(seed: 1)
-    let cert = f.certificate(directKey: false, uid: "Fixture <f@example.invalid>")
+    let f = try PQFixture(seed: 1)
+    let cert = try f.certificate(directKey: false, uid: "Fixture <f@example.invalid>")
     let token = Fixture.token(
-        Fixture.licence, signatures: f.documentSignature(Fixture.signedText, at: f.created), certificate: cert, hashHeader: false)
+        Fixture.licence, signatures: try f.documentSignature(Fixture.signedText, at: f.created), certificate: cert, hashHeader: false)
     #expect(throws: VerifyError.brokenBindings) { try check(token, anchors: [cert]) }
 }
 
 @Test func aVersion6SignatureNamedOnlyByKeyIDIsRefused() throws {
-    let f = PQFixture(seed: 1)
-    let cert = f.certificate(uid: "Fixture <f@example.invalid>")
+    let f = try PQFixture(seed: 1)
+    let cert = try f.certificate(uid: "Fixture <f@example.invalid>")
     let token = Fixture.token(
-        Fixture.licence, signatures: f.documentSignature(Fixture.signedText, at: f.created, issuerFingerprint: false),
+        Fixture.licence, signatures: try f.documentSignature(Fixture.signedText, at: f.created, issuerFingerprint: false),
         certificate: cert, hashHeader: false)
     #expect(throws: VerifyError.noIssuer) { try check(token, anchors: [cert]) }
 }
 
 @Test func signingRightsAndExpiryComeFromTheDirectKeySignature() throws {
-    let f = PQFixture(seed: 1)
-    let certifyOnly = f.certificate(flags: 0x01, uid: "Fixture <f@example.invalid>")
+    let f = try PQFixture(seed: 1)
+    let certifyOnly = try f.certificate(flags: 0x01, uid: "Fixture <f@example.invalid>")
     let signed = Fixture.token(
-        Fixture.licence, signatures: f.documentSignature(Fixture.signedText, at: f.created), certificate: certifyOnly,
+        Fixture.licence, signatures: try f.documentSignature(Fixture.signedText, at: f.created), certificate: certifyOnly,
         hashHeader: false)
-    #expect(throws: VerifyError.notSigningCapable(fingerprint: f.packet.fingerprintHex)) { try check(signed, anchors: [certifyOnly]) }
+    let fingerprint = try f.packet.fingerprintHex
+    #expect(throws: VerifyError.notSigningCapable(fingerprint: fingerprint)) { try check(signed, anchors: [certifyOnly]) }
 
-    let expiring = f.certificate(lifetime: 60, uid: "Fixture <f@example.invalid>")
+    let expiring = try f.certificate(lifetime: 60, uid: "Fixture <f@example.invalid>")
     let late = Fixture.token(
-        Fixture.licence, signatures: f.documentSignature(Fixture.signedText, at: f.created.addingTimeInterval(120)),
+        Fixture.licence, signatures: try f.documentSignature(Fixture.signedText, at: f.created.addingTimeInterval(120)),
         certificate: expiring, hashHeader: false)
     #expect {
         try check(late, anchors: [expiring])
@@ -107,17 +108,18 @@ func bothHalvesMustVerify(_ breakEd25519: Bool, _ breakMLDSA: Bool) throws {
 
 @Test func aVersion4AnchorDoesNotAcceptAVersion6Signature() throws {
     let classic = Fixture()
-    let pq = PQFixture(seed: 1)
-    let cert = classic.certificate()
+    let pq = try PQFixture(seed: 1)
+    let cert = try classic.certificate()
     let token = Fixture.token(
-        Fixture.licence, signatures: pq.documentSignature(Fixture.signedText, at: pq.created), certificate: cert, hashHeader: false)
+        Fixture.licence, signatures: try pq.documentSignature(Fixture.signedText, at: pq.created), certificate: cert, hashHeader: false)
     #expect(throws: VerifyError.unknownSigner) { try check(token, anchors: [cert]) }
 }
 
 @Test func anIssuerFingerprintOfTheWrongVersionIsMalformed() throws {
-    let f = PQFixture(seed: 1)
-    let hashed = sub(2, be32(UInt32(f.created.timeIntervalSince1970))) + sub(33, Data([4]) + Data(f.packet.fingerprint.prefix(20)))
-    let body = f.signature(type: 0x01, hashed: hashed, over: Data(Fixture.signedText.utf8))
+    let f = try PQFixture(seed: 1)
+    let v6 = try f.packet.fingerprint
+    let hashed = sub(2, be32(UInt32(f.created.timeIntervalSince1970))) + sub(33, Data([4]) + Data(v6.prefix(20)))
+    let body = try f.signature(type: 0x01, hashed: hashed, over: Data(Fixture.signedText.utf8))
     #expect(throws: PacketFailure.malformed("issuer fingerprint version")) { try SignaturePacket(body: body) }
 }
 
@@ -127,42 +129,21 @@ struct ID30Vectors: Decodable {
     let cases: [Vectors.Case]
 
     static let dir = Vectors.dir.appending(path: "id30")
-    static let all: ID30Vectors = try! JSONDecoder().decode(ID30Vectors.self, from: Data(contentsOf: dir.appending(path: "vectors.json")))
+    static func load() throws -> ID30Vectors {
+        try JSONDecoder().decode(ID30Vectors.self, from: Data(contentsOf: dir.appending(path: "vectors.json")))
+    }
 }
 
-@Test(arguments: ID30Vectors.all.cases.map(\.name))
-func theSwiftCheckerAnswersTheID30Vectors(_ caseName: String) throws {
-    let c = ID30Vectors.all.cases.first { $0.name == caseName }!
+@Test(arguments: (try? ID30Vectors.load().cases) ?? [])
+func theSwiftCheckerAnswersTheID30Vectors(_ c: Vectors.Case) throws {
     let anchors = try c.anchors.map {
         try Certificate(armored: String(contentsOf: ID30Vectors.dir.appending(path: "anchors/\($0)"), encoding: .utf8))
     }
-    let text = try String(contentsOf: ID30Vectors.dir.appending(path: "tokens/\(c.token)"), encoding: .utf8)
-    let result: String
-    var licence: Licence?
-    do {
-        let token = try Token(text)
-        do {
-            licence = try verify(token, anchors: anchors, on: CivilDate(c.day)!).licence
-            result = "ok"
-        } catch {
-            result = name(of: error)
-            licence = try? Licence.parse(token.signedText)
-        }
-    } catch {
-        result = tokenName(error)
-    }
-    #expect(result == c.result, "\(c.name)")
-    if let expected = c.licence {
-        #expect(licence?.id.uuidString.lowercased() == expected["licence_id"])
-        #expect(licence?.licensee == expected["licensee"])
-        #expect(licence?.notAfter.description == expected["not_after"])
-    } else {
-        #expect(licence == nil, "\(c.name)")
-    }
+    try answer(c, token: try String(contentsOf: ID30Vectors.dir.appending(path: "tokens/\(c.token)"), encoding: .utf8), anchors: anchors)
 }
 
-@Test func theID30VectorsCoverEveryCheck() {
-    let refusals = Set(ID30Vectors.all.cases.map(\.result))
+@Test func theID30VectorsCoverEveryCheck() throws {
+    let refusals = Set(try ID30Vectors.load().cases.map(\.result))
     for expected in [
         "ok", "UntrustedPrimary", "BrokenBindings", "ExtraSignatures", "NotTextSignature", "NoIssuer", "UnknownSigner",
         "NotSigningCapable", "ExpiredAtSigning", "WeakDigest", "BadSignature", "Payload", "NotYetValid", "Expired",

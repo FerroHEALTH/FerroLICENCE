@@ -12,9 +12,13 @@ func writeTheID30Vectors() throws {
     try FileManager.default.createDirectory(at: out.appending(path: "anchors"), withIntermediateDirectories: true)
     try FileManager.default.createDirectory(at: out.appending(path: "tokens"), withIntermediateDirectories: true)
 
-    let a = PQFixture(seed: 1), b = PQFixture(seed: 2), u = PQFixture(seed: 3)
-    let c = PQFixture(seed: 4), d = PQFixture(seed: 5), n = PQFixture(seed: 6)
-    let certs: [String: Data] = [
+    let a = try PQFixture(seed: 1)
+    let b = try PQFixture(seed: 2)
+    let u = try PQFixture(seed: 3)
+    let c = try PQFixture(seed: 4)
+    let d = try PQFixture(seed: 5)
+    let n = try PQFixture(seed: 6)
+    let certs: [String: Data] = try [
         "A": a.certificate(uid: "Vector A <a@example.invalid>"),
         "B": b.certificate(uid: "Vector B <b@example.invalid>"),
         "U": u.certificate(uid: "Vector U <u@example.invalid>"),
@@ -45,26 +49,26 @@ func writeTheID30Vectors() throws {
     let at = a.created.addingTimeInterval(60)
 
     var tokens: [String: String] = [:]
-    tokens["ok_a"] = token(firstText, a.documentSignature(signed(firstText), at: at), certs["A"])
-    tokens["ok_b_sha512"] = token(
+    tokens["ok_a"] = try token(firstText, a.documentSignature(signed(firstText), at: at), certs["A"])
+    tokens["ok_b_sha512"] = try token(
         String(unicode.canonicalJSON.dropLast()), b.documentSignature(signed(String(unicode.canonicalJSON.dropLast())), at: at, hash: 10),
         certs["B"])
-    tokens["untrusted"] = token(firstText, u.documentSignature(signed(firstText), at: at), certs["U"])
+    tokens["untrusted"] = try token(firstText, u.documentSignature(signed(firstText), at: at), certs["U"])
     tokens["tampered"] = tokens["ok_a"]!.replacingOccurrences(of: "Example Hospital NV", with: "Example Hospital BV")
-    tokens["ed25519_half_broken"] = token(firstText, a.documentSignature(signed(firstText), at: at, breakEd25519: true), certs["A"])
-    tokens["mldsa_half_broken"] = token(firstText, a.documentSignature(signed(firstText), at: at, breakMLDSA: true), certs["A"])
-    tokens["weak_digest"] = token(firstText, a.documentSignature(signed(firstText), at: at, hash: 11), certs["A"])
-    tokens["two_signatures"] = token(
+    tokens["ed25519_half_broken"] = try token(firstText, a.documentSignature(signed(firstText), at: at, breakEd25519: true), certs["A"])
+    tokens["mldsa_half_broken"] = try token(firstText, a.documentSignature(signed(firstText), at: at, breakMLDSA: true), certs["A"])
+    tokens["weak_digest"] = try token(firstText, a.documentSignature(signed(firstText), at: at, hash: 11), certs["A"])
+    tokens["two_signatures"] = try token(
         firstText, a.documentSignature(signed(firstText), at: at) + b.documentSignature(signed(firstText), at: at), certs["A"])
-    tokens["binary_signature"] = token(firstText, a.documentSignature(signed(firstText), type: 0x00, at: at), certs["A"])
-    tokens["key_id_only"] = token(firstText, a.documentSignature(signed(firstText), at: at, issuerFingerprint: false), certs["A"])
-    tokens["unknown_signer"] = token(firstText, u.documentSignature(signed(firstText), at: at), certs["A"])
-    tokens["not_signing"] = token(firstText, c.documentSignature(signed(firstText), at: at), certs["C"])
-    tokens["expired_at_signing"] = token(
+    tokens["binary_signature"] = try token(firstText, a.documentSignature(signed(firstText), type: 0x00, at: at), certs["A"])
+    tokens["key_id_only"] = try token(firstText, a.documentSignature(signed(firstText), at: at, issuerFingerprint: false), certs["A"])
+    tokens["unknown_signer"] = try token(firstText, u.documentSignature(signed(firstText), at: at), certs["A"])
+    tokens["not_signing"] = try token(firstText, c.documentSignature(signed(firstText), at: at), certs["C"])
+    tokens["expired_at_signing"] = try token(
         firstText, d.documentSignature(signed(firstText), at: d.created.addingTimeInterval(120)), certs["D"])
-    tokens["no_direct_key"] = token(firstText, n.documentSignature(signed(firstText), at: at), certs["N"])
-    tokens["unknown_field"] = token(unknownField, a.documentSignature(signed(unknownField), at: at), certs["A"])
-    tokens["no_certificate"] = token(firstText, a.documentSignature(signed(firstText), at: at), nil)
+    tokens["no_direct_key"] = try token(firstText, n.documentSignature(signed(firstText), at: at), certs["N"])
+    tokens["unknown_field"] = try token(unknownField, a.documentSignature(signed(unknownField), at: at), certs["A"])
+    tokens["no_certificate"] = try token(firstText, a.documentSignature(signed(firstText), at: at), nil)
     for (name, text) in tokens {
         try text.write(to: out.appending(path: "tokens/\(name).asc"), atomically: true, encoding: .utf8)
     }

@@ -244,7 +244,6 @@ enum HashAlgorithm {
     /// The digest size in bits, for the algorithms CryptoKit computes and SHA2-224.
     static func bits(_ id: UInt8) -> Int? {
         switch id {
-        case 2: 160
         case 8, 12: 256
         case 9: 384
         case 10, 14: 512
@@ -263,9 +262,10 @@ enum HashAlgorithm {
         }
     }
 
+    /// The digest of a signature's data. SHA-1 is absent: RFC 9580 §9.5
+    /// forbids validating a recent signature that depends on it.
     static func digest(_ id: UInt8, _ data: Data) -> Data? {
         switch id {
-        case 2: Data(Insecure.SHA1.hash(data: data))
         case 8: Data(SHA256.hash(data: data))
         case 9: Data(SHA384.hash(data: data))
         case 10: Data(SHA512.hash(data: data))

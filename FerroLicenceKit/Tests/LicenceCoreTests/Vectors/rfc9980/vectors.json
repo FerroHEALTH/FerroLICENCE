@@ -1,0 +1,13 @@
+{
+  "source": "RFC 9980 Appendix A.3 (ML-DSA-65+Ed25519 with ML-KEM-768+X25519), A.3.2 and A.3.4",
+  "certificate": "a3-public.asc",
+  "primary_fingerprint": "a3e2e14b6a493ff930fb27321f125e9a6880338be9fb7da3ae065ea65793242f",
+  "subkey_fingerprint": "7dae8fbce23022607167af72a002e774e0ca379a2d7ae072384e1e8fde3265e4",
+  "signature": "a3-detached.asc",
+  "signature_version": 6,
+  "signature_type": 1,
+  "signature_type_name": "text",
+  "hash_algorithm": 8,
+  "message": "Testing\n",
+  "hashed_text": "Testing\r\n"
+}

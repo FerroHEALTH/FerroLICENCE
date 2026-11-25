@@ -149,7 +149,8 @@ struct SOPInteropTests {
 
 /// A throwaway folder under `/tmp` for software ID 30 keys.
 struct SOPHome {
-    static let installed = SOP.find()
+    /// `FERROLICENCE_SOP` names a build outside the usual places.
+    static let installed = ProcessInfo.processInfo.environment["FERROLICENCE_SOP"].map { SOP(executable: URL(filePath: $0)) } ?? SOP.find()
     static var available: Bool {
         installed != nil || ProcessInfo.processInfo.environment["FERROLICENCE_REQUIRE_SOP"] == "1"
     }

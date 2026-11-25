@@ -19,7 +19,7 @@ jobs:
   kit:
     name: kit tests, GnuPG interop required
     runs-on: xcode-27
-    timeout-minutes: 30
+    timeout-minutes: 40
     permissions:
       contents: read
     steps:
@@ -28,9 +28,18 @@ jobs:
           persist-credentials: false
       - name: swift format (strict)
         run: swift format lint --strict --recursive FerroLicenceKit FerroLICENCE scripts/ui/contact-sheet.swift scripts/release/verify-update.swift scripts/release/dmg-background.swift
+      # The family's RFC 9980 ID 30 signer, built from FerroSYS at a pinned
+      # commit: crates.io holds only a placeholder of the crate so far.
+      - name: build ferrohealth-sop
+        run: |
+          cargo install --locked --git https://github.com/FerroHEALTH/FerroSYS \
+            --rev 58fc80256245e82429789c39817c70570313b5bd \
+            --root "$RUNNER_TEMP/sop" --bin ferrohealth-sop ferrohealth-openpgp-pq
       - name: tests
         env:
           FERROLICENCE_REQUIRE_GPG: "1"
+          FERROLICENCE_REQUIRE_SOP: "1"
+          FERROLICENCE_SOP: ${{ runner.temp }}/sop/bin/ferrohealth-sop
         run: swift test --package-path FerroLicenceKit
       - name: register-check passes on the register snapshot
         env:
